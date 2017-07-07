@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <strong>Todos as questões</strong>
+        </div>
+        {% if questions %}
+        <ul>
+            {% for question in questions %}
+            <li>
+                <a href="{% url 'exibir' question.id %}"> {{ question.question_text }} / {{ question.date_pub }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <p>Nenhuma questão encontrada!!</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

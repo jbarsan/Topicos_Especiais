@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="panel panel-default">
+    <div class="panel-heading text-center"><strong>Questões:</strong></div>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Questão</th>
+            <th>Data da publicação</th>
+        </tr>
+        <tr>
+            <td>{{question.id}}</td>
+            <td>{{question.question_text}}</td>
+            <td>{{question.pub_date}}</td>
+        </tr>
+    </table>
+</div>
+
+{% endblock %}
