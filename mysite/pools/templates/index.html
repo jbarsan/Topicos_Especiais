@@ -9,7 +9,7 @@
         <ul>
             {% for question in questions %}
             <li>
-                <a href="{% url 'exibir' question.id %}"> {{ question.question_text }} / {{ question.date_pub }}
+                <a href="{% url 'exibir' question.id %}"> {{ question.question_text }} // {{ question.pub_date }}
                 </a>
             </li>
             {% endfor %}

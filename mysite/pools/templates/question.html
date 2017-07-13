@@ -15,6 +15,21 @@
             <td>{{question.pub_date}}</td>
         </tr>
     </table>
+    <table class="table">
+        <tr>
+            <th>
+                Respostas
+            </th>
+        </tr>
+        
+        <td>
+        {% for i in choices %}
+        {{i}}
+        <br>
+        {% endfor %}
+        </td>
+    </table>
+
 </div>
 
 {% endblock %}
