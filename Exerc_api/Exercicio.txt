@@ -1,0 +1,17 @@
+FIPE:
+https://deividfortuna.github.io/fipe/
+Api da FIPE que exibe informações sobre os veículos e preços.
+Fiz um aplicativo simples (Não terminei completamente, mas é funcional)
+
+API das Crônicas de Gelo e Fogo
+https://anapioficeandfire.com/api
+É uma api simples para quem é fã dos livros da Série "As Crônicas de Gelo e Fogo".
+A api é aberta é pode ser usada para consumir informações sobre os personagens,
+livros, casas e demais informações referentes a série.
+
+Viacep
+https://viacep.com.br
+É uma api aberta que informa dados de um endereço através do CEP.
+É muito simples de usar, basta informar o cep para obter as informações, caso
+o cep não exista a api retorna um dicionario ('erro' = True).
+Fiz um aplicativo simples.
