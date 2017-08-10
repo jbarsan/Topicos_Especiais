@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Página de Login</title>
+    <link href="{% static 'css/materialize.min.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="{% static 'css/google-font.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
+
+    <!-- CSS do login-->
+    <link href="{% static 'usuarios/css/style_login.min.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="{% static 'usuarios/css/custom_login.min.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="{% static 'usuarios/css/layout_login.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
+
+    <!-- Plugins CSS para esta página -->
+    <link href="{% static 'usuarios/css/plugins/prism/prism.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="{% static 'usuarios/css/plugins/perfect-scrollbar/perfect-scrollbar.css' %}" type="text/css" rel="stylesheet"
+          media="screen,projection">
+
+</head>
+
+<body class="blue">
+<!-- Inicio do loading da página
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+Fim do Loading -->
+<main>
+    {% block body %}
+    {% endblock %}
+</main>
+
+<!-- ================================================
+                        Scripts
+  ================================================ -->
+<script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'usuarios/js/prism/prism.js' %}"></script>
+<script type="text/javascript" src="{% static 'usuarios/js/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
+</body>
+</html>
