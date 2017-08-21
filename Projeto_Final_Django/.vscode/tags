@@ -1,0 +1,370 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+0001_initial.py	../perfis/migrations/0001_initial.py	1;"	kind:file	line:1
+0001_initial.py	../servicos/migrations/0001_initial.py	1;"	kind:file	line:1
+ALLOWED_HOSTS	../projeto_alpha/settings.py	/^ALLOWED_HOSTS = []$/;"	kind:variable	line:28
+AUTH_PASSWORD_VALIDATORS	../projeto_alpha/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:90
+AlphaConfig	../servicos/apps.py	/^class AlphaConfig(AppConfig):$/;"	kind:class	line:4
+AlvaraConstrucao	../servicos/models.py	/^class AlvaraConstrucao(models.Model):$/;"	kind:class	line:86
+AppConfig	../perfis/apps.py	/^from django.apps import AppConfig$/;"	kind:namespace	line:1
+AppConfig	../servicos/apps.py	/^from django.apps import AppConfig$/;"	kind:namespace	line:1
+AppConfig	../usuarios/apps.py	/^from django.apps import AppConfig$/;"	kind:namespace	line:1
+AutoRegularizacao	../servicos/models.py	/^class AutoRegularizacao(models.Model):$/;"	kind:class	line:102
+BASE_DIR	../projeto_alpha/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:16
+Bairro	../servicos/models.py	/^class Bairro(models.Model):$/;"	kind:class	line:23
+CPF	../servicos/models.py	/^class CPF(models.Model):$/;"	kind:class	line:31
+CadastrarAlvaraForm	../servicos/forms.py	/^class CadastrarAlvaraForm(forms.Form):$/;"	kind:class	line:5
+CadastrarAlvaraView	../servicos/urls.py	/^from .views import CadastrarAlvaraView, CadastrarAutoView, CadastrarHabiteseView$/;"	kind:namespace	line:3
+CadastrarAlvaraView	../servicos/views.py	/^class CadastrarAlvaraView(View):$/;"	kind:class	line:37
+CadastrarAutoForm	../servicos/forms.py	/^class CadastrarAutoForm(forms.Form):$/;"	kind:class	line:37
+CadastrarAutoView	../servicos/urls.py	/^from .views import CadastrarAlvaraView, CadastrarAutoView, CadastrarHabiteseView$/;"	kind:namespace	line:3
+CadastrarAutoView	../servicos/views.py	/^class CadastrarAutoView(View):$/;"	kind:class	line:71
+CadastrarHabiteSeForm	../servicos/forms.py	/^class CadastrarHabiteSeForm(forms.Form):$/;"	kind:class	line:69
+CadastrarHabiteseView	../servicos/urls.py	/^from .views import CadastrarAlvaraView, CadastrarAutoView, CadastrarHabiteseView$/;"	kind:namespace	line:3
+CadastrarHabiteseView	../servicos/views.py	/^class CadastrarHabiteseView(View):$/;"	kind:class	line:106
+Cargo	../servicos/models.py	/^class Cargo(models.Model):$/;"	kind:class	line:70
+Cidade	../servicos/models.py	/^class Cidade(models.Model):$/;"	kind:class	line:15
+DATABASES	../projeto_alpha/settings.py	/^DATABASES = {$/;"	kind:variable	line:79
+DEBUG	../projeto_alpha/settings.py	/^DEBUG = True$/;"	kind:variable	line:26
+EnderecoObra	../servicos/models.py	/^class EnderecoObra(models.Model):$/;"	kind:class	line:38
+EnderecoRequerente	../servicos/models.py	/^class EnderecoRequerente(models.Model):$/;"	kind:class	line:49
+Estado	../servicos/models.py	/^class Estado(models.Model):$/;"	kind:class	line:7
+HabiteSe	../servicos/models.py	/^class HabiteSe(models.Model):$/;"	kind:class	line:118
+INSTALLED_APPS	../projeto_alpha/settings.py	/^INSTALLED_APPS = [$/;"	kind:variable	line:33
+LANGUAGE_CODE	../projeto_alpha/settings.py	/^LANGUAGE_CODE = 'pt-br'$/;"	kind:variable	line:109
+MIDDLEWARE	../projeto_alpha/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:45
+Migration	../perfis/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:10
+Migration	../servicos/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:9
+Perfil	../perfis/models.py	/^class Perfil(models.Model):$/;"	kind:class	line:7
+Perfil	../perfis/views.py	/^from .models import Perfil$/;"	kind:namespace	line:2
+Perfil	../usuarios/views.py	/^from perfis.models import Perfil$/;"	kind:namespace	line:6
+PerfisConfig	../perfis/apps.py	/^class PerfisConfig(AppConfig):$/;"	kind:class	line:4
+ROOT_URLCONF	../projeto_alpha/settings.py	/^ROOT_URLCONF = 'projeto_alpha.urls'$/;"	kind:variable	line:55
+RegistrarUsuarioForm	../usuarios/forms.py	/^class RegistrarUsuarioForm(forms.Form):$/;"	kind:class	line:5
+RegistrarUsuarioForm	../usuarios/views.py	/^from .forms import RegistrarUsuarioForm$/;"	kind:namespace	line:3
+RegistrarUsuarioView	../usuarios/urls.py	/^from .views import RegistrarUsuarioView$/;"	kind:namespace	line:2
+RegistrarUsuarioView	../usuarios/views.py	/^class RegistrarUsuarioView(View):$/;"	kind:class	line:12
+Requerente	../servicos/models.py	/^class Requerente(models.Model):$/;"	kind:class	line:60
+ResetarUsuarioForm	../usuarios/forms.py	/^class ResetarUsuarioForm(forms.Form):$/;"	kind:class	line:27
+ResetarUsuarioForm	../usuarios/views.py	/^from .forms import ResetarUsuarioForm$/;"	kind:namespace	line:4
+ResponsavelTecnico	../servicos/models.py	/^class ResponsavelTecnico(models.Model):$/;"	kind:class	line:77
+SECRET_KEY	../projeto_alpha/settings.py	/^SECRET_KEY = 'bao6$-%10g@#++zmn*x148^yex%vb+4bz5$9+leyp4+3n(+!vy'$/;"	kind:variable	line:23
+STATIC_URL	../projeto_alpha/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:123
+TEMPLATES	../projeto_alpha/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:57
+TIME_ZONE	../projeto_alpha/settings.py	/^TIME_ZONE = 'America\/Fortaleza'$/;"	kind:variable	line:111
+TestCase	../perfis/tests.py	/^from django.test import TestCase$/;"	kind:namespace	line:1
+TestCase	../servicos/tests.py	/^from django.test import TestCase$/;"	kind:namespace	line:1
+TestCase	../usuarios/tests.py	/^from django.test import TestCase$/;"	kind:namespace	line:1
+USE_I18N	../projeto_alpha/settings.py	/^USE_I18N = True$/;"	kind:variable	line:113
+USE_L10N	../projeto_alpha/settings.py	/^USE_L10N = True$/;"	kind:variable	line:115
+USE_TZ	../projeto_alpha/settings.py	/^USE_TZ = True$/;"	kind:variable	line:117
+User	../perfis/models.py	/^from django.contrib.auth.models import User$/;"	kind:namespace	line:2
+User	../usuarios/forms.py	/^from django.contrib.auth.models import User$/;"	kind:namespace	line:2
+User	../usuarios/views.py	/^from django.contrib.auth.models import User$/;"	kind:namespace	line:5
+UsuariosConfig	../usuarios/apps.py	/^class UsuariosConfig(AppConfig):$/;"	kind:class	line:4
+View	../servicos/views.py	/^from django.views.generic.base import View$/;"	kind:namespace	line:4
+View	../usuarios/views.py	/^from django.views.generic.base import View$/;"	kind:namespace	line:2
+WSGI_APPLICATION	../projeto_alpha/settings.py	/^WSGI_APPLICATION = 'projeto_alpha.wsgi.application'$/;"	kind:variable	line:73
+__init__.py	../perfis/__init__.py	1;"	kind:file	line:1
+__init__.py	../perfis/migrations/__init__.py	1;"	kind:file	line:1
+__init__.py	../projeto_alpha/__init__.py	1;"	kind:file	line:1
+__init__.py	../servicos/__init__.py	1;"	kind:file	line:1
+__init__.py	../servicos/migrations/__init__.py	1;"	kind:file	line:1
+__init__.py	../usuarios/__init__.py	1;"	kind:file	line:1
+__init__.py	../usuarios/migrations/__init__.py	1;"	kind:file	line:1
+__str__	../servicos/models.py	/^    def __str__(self):$/;"	kind:member	line:11
+__str__	../servicos/models.py	/^    def __str__(self):$/;"	kind:member	line:114
+__str__	../servicos/models.py	/^    def __str__(self):$/;"	kind:member	line:132
+__str__	../servicos/models.py	/^    def __str__(self):$/;"	kind:member	line:19
+__str__	../servicos/models.py	/^    def __str__(self):$/;"	kind:member	line:27
+__str__	../servicos/models.py	/^    def __str__(self):$/;"	kind:member	line:34
+__str__	../servicos/models.py	/^    def __str__(self):$/;"	kind:member	line:45
+__str__	../servicos/models.py	/^    def __str__(self):$/;"	kind:member	line:56
+__str__	../servicos/models.py	/^    def __str__(self):$/;"	kind:member	line:66
+__str__	../servicos/models.py	/^    def __str__(self):$/;"	kind:member	line:73
+__str__	../servicos/models.py	/^    def __str__(self):$/;"	kind:member	line:82
+__str__	../servicos/models.py	/^    def __str__(self):$/;"	kind:member	line:98
+adiciona_mensagem	../servicos/forms.py	/^def adiciona_mensagem(self, msg):$/;"	kind:function	line:101
+adiciona_mensagem	../usuarios/forms.py	/^def adiciona_mensagem(self, msg):$/;"	kind:function	line:45
+admin	../perfis/admin.py	/^from django.contrib import admin$/;"	kind:namespace	line:1
+admin	../projeto_alpha/urls.py	/^from django.contrib import admin$/;"	kind:namespace	line:17
+admin	../servicos/admin.py	/^from django.contrib import admin$/;"	kind:namespace	line:1
+admin	../usuarios/admin.py	/^from django.contrib import admin$/;"	kind:namespace	line:1
+admin.py	../perfis/admin.py	1;"	kind:file	line:1
+admin.py	../servicos/admin.py	1;"	kind:file	line:1
+admin.py	../usuarios/admin.py	1;"	kind:file	line:1
+alvara_construcao	../servicos/models.py	/^    alvara_construcao = models.ForeignKey(AlvaraConstrucao, related_name='habitese_alvara', null=True, blank=True)$/;"	kind:variable	line:126
+ano_alvara	../servicos/forms.py	/^    ano_alvara = forms.IntegerField(required=True)$/;"	kind:variable	line:7
+ano_alvara	../servicos/models.py	/^    ano_alvara = models.IntegerField()$/;"	kind:variable	line:88
+ano_auto	../servicos/forms.py	/^    ano_auto = forms.CharField(required=True)$/;"	kind:variable	line:39
+ano_auto	../servicos/models.py	/^    ano_auto = models.IntegerField()$/;"	kind:variable	line:104
+ano_habitese	../servicos/forms.py	/^    ano_habitese = forms.CharField(required=True)$/;"	kind:variable	line:71
+ano_habitese	../servicos/models.py	/^    ano_habitese = models.IntegerField()$/;"	kind:variable	line:120
+application	../projeto_alpha/wsgi.py	/^application = get_wsgi_application()$/;"	kind:variable	line:16
+apps.py	../perfis/apps.py	1;"	kind:file	line:1
+apps.py	../servicos/apps.py	1;"	kind:file	line:1
+apps.py	../usuarios/apps.py	1;"	kind:file	line:1
+area_construida	../servicos/forms.py	/^    area_construida = forms.DecimalField(max_digits=10, decimal_places=2, required=True)$/;"	kind:variable	line:16
+area_construida	../servicos/forms.py	/^    area_construida = forms.DecimalField(max_digits=10, decimal_places=2, required=True)$/;"	kind:variable	line:48
+area_construida	../servicos/forms.py	/^    area_construida = forms.DecimalField(max_digits=10, decimal_places=2, required=True)$/;"	kind:variable	line:80
+area_construida	../servicos/models.py	/^    area_construida = models.DecimalField(max_digits=10, decimal_places=2)$/;"	kind:variable	line:109
+area_construida	../servicos/models.py	/^    area_construida = models.DecimalField(max_digits=10, decimal_places=2)$/;"	kind:variable	line:125
+area_construida	../servicos/models.py	/^    area_construida = models.DecimalField(max_digits=10, decimal_places=2)$/;"	kind:variable	line:93
+area_terreno	../servicos/forms.py	/^    area_terreno = forms.DecimalField(max_digits=10, decimal_places=2, required=True)$/;"	kind:variable	line:15
+area_terreno	../servicos/forms.py	/^    area_terreno = forms.DecimalField(max_digits=10, decimal_places=2, required=True)$/;"	kind:variable	line:47
+area_terreno	../servicos/forms.py	/^    area_terreno = forms.DecimalField(max_digits=10, decimal_places=2, required=True)$/;"	kind:variable	line:79
+area_terreno	../servicos/models.py	/^    area_terreno = models.DecimalField(max_digits=10, decimal_places=2)$/;"	kind:variable	line:108
+area_terreno	../servicos/models.py	/^    area_terreno = models.DecimalField(max_digits=10, decimal_places=2)$/;"	kind:variable	line:124
+area_terreno	../servicos/models.py	/^    area_terreno = models.DecimalField(max_digits=10, decimal_places=2)$/;"	kind:variable	line:92
+auto_regularizacao	../servicos/models.py	/^    auto_regularizacao = models.ForeignKey(AutoRegularizacao, related_name='habitese_auto', null=True, blank=True)$/;"	kind:variable	line:127
+bairro	../servicos/forms.py	/^    bairro = forms.Select()$/;"	kind:variable	line:13
+bairro	../servicos/forms.py	/^    bairro = forms.Select()$/;"	kind:variable	line:45
+bairro	../servicos/forms.py	/^    bairro = forms.Select()$/;"	kind:variable	line:77
+bairro	../servicos/models.py	/^    bairro = models.ForeignKey(Bairro, on_delete=models.CASCADE)$/;"	kind:variable	line:40
+bairro	../servicos/models.py	/^    bairro = models.ForeignKey(Bairro, on_delete=models.CASCADE)$/;"	kind:variable	line:51
+cargo	../servicos/models.py	/^    cargo = models.ForeignKey(Cargo, on_delete=models.CASCADE)$/;"	kind:variable	line:79
+cidade	../servicos/forms.py	/^    cidade = forms.Select()$/;"	kind:variable	line:14
+cidade	../servicos/forms.py	/^    cidade = forms.Select()$/;"	kind:variable	line:46
+cidade	../servicos/forms.py	/^    cidade = forms.Select()$/;"	kind:variable	line:78
+cidade	../servicos/models.py	/^    cidade = models.ForeignKey(Cidade, on_delete=models.CASCADE)$/;"	kind:variable	line:39
+cidade	../servicos/models.py	/^    cidade = models.ForeignKey(Cidade, on_delete=models.CASCADE)$/;"	kind:variable	line:50
+cidade	../servicos/models.py	/^    cidade = models.ForeignKey(Cidade, related_name='cidade', on_delete=models.CASCADE)$/;"	kind:variable	line:25
+complemento	../servicos/forms.py	/^    complemento = forms.CharField(required=False)$/;"	kind:variable	line:12
+complemento	../servicos/forms.py	/^    complemento = forms.CharField(required=False)$/;"	kind:variable	line:44
+complemento	../servicos/forms.py	/^    complemento = forms.CharField(required=False)$/;"	kind:variable	line:76
+complemento	../servicos/models.py	/^    complemento = models.CharField(max_length=100, blank=True)$/;"	kind:variable	line:43
+complemento	../servicos/models.py	/^    complemento = models.CharField(max_length=100, blank=True)$/;"	kind:variable	line:54
+cpf	../servicos/models.py	/^    cpf = models.CharField(max_length=11)$/;"	kind:variable	line:32
+cpf	../servicos/models.py	/^    cpf = models.OneToOneField(CPF, related_name='cpf_requerente', on_delete=models.CASCADE)$/;"	kind:variable	line:62
+data_alvara	../servicos/forms.py	/^    data_alvara = forms.DateField(required=True)$/;"	kind:variable	line:18
+data_alvara	../servicos/models.py	/^    data_alvara = models.DateField()$/;"	kind:variable	line:95
+data_auto	../servicos/forms.py	/^    data_auto = forms.DateField(required=True)$/;"	kind:variable	line:50
+data_auto	../servicos/forms.py	/^    data_auto = forms.DateField(required=True)$/;"	kind:variable	line:82
+data_auto	../servicos/models.py	/^    data_auto = models.DateField()$/;"	kind:variable	line:111
+data_habitese	../servicos/models.py	/^    data_habitese = models.DateField()$/;"	kind:variable	line:129
+db	../perfis/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:7
+db	../servicos/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:6
+deletion	../perfis/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:7
+deletion	../servicos/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:6
+dependencies	../perfis/migrations/0001_initial.py	/^    dependencies = [$/;"	kind:variable	line:14
+dependencies	../servicos/migrations/0001_initial.py	/^    dependencies = [$/;"	kind:variable	line:13
+descricao	../servicos/models.py	/^    descricao = models.CharField(max_length=100)$/;"	kind:variable	line:71
+django	../manage.py	/^            import django$/;"	kind:namespace	line:14
+django	../perfis/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:7
+django	../servicos/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:6
+email	../perfis/models.py	/^    def email(self):$/;"	kind:member	line:14
+email	../usuarios/forms.py	/^    email = forms.EmailField(required=True)$/;"	kind:variable	line:9
+endereco	../servicos/models.py	/^    endereco = models.ForeignKey(EnderecoRequerente, related_name='endereco_requerente', on_delete=models.CASCADE)$/;"	kind:variable	line:63
+endereco_obra	../servicos/forms.py	/^    endereco_obra = forms.CharField(required=True)$/;"	kind:variable	line:42
+endereco_obra	../servicos/forms.py	/^    endereco_obra = forms.CharField(required=True)$/;"	kind:variable	line:74
+endereco_obra	../servicos/models.py	/^    endereco_obra = models.ForeignKey(EnderecoObra, on_delete=models.CASCADE)$/;"	kind:variable	line:107
+endereco_obra	../servicos/models.py	/^    endereco_obra = models.ForeignKey(EnderecoObra, on_delete=models.CASCADE)$/;"	kind:variable	line:123
+endereco_obra	../servicos/models.py	/^    endereco_obra = models.ForeignKey(EnderecoObra, on_delete=models.CASCADE)$/;"	kind:variable	line:91
+estado	../servicos/models.py	/^    estado = models.ForeignKey(Estado, related_name='estado', on_delete=models.CASCADE)$/;"	kind:variable	line:17
+execute_from_command_line	../manage.py	/^        from django.core.management import execute_from_command_line$/;"	kind:namespace	line:8
+exibir	../perfis/views.py	/^def exibir(request, perfil_id):$/;"	kind:function	line:23
+field	../servicos/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='cidade', to='servicos.Cidade'),$/;"	kind:variable	line:154
+field	../servicos/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='estado', to='servicos.Estado'),$/;"	kind:variable	line:149
+field	../servicos/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='servicos.EnderecoObra'),$/;"	kind:variable	line:159
+field	../servicos/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='servicos.EnderecoObra'),$/;"	kind:variable	line:174
+field	../servicos/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='servicos.Requerente'),$/;"	kind:variable	line:139
+field	../servicos/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='servicos.Requerente'),$/;"	kind:variable	line:164
+field	../servicos/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='servicos.Requerente'),$/;"	kind:variable	line:179
+field	../servicos/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='servicos.ResponsavelTecnico'),$/;"	kind:variable	line:144
+field	../servicos/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='servicos.ResponsavelTecnico'),$/;"	kind:variable	line:169
+field	../servicos/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='servicos.ResponsavelTecnico'),$/;"	kind:variable	line:184
+fields	../perfis/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:21
+fields	../servicos/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:103
+fields	../servicos/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:119
+fields	../servicos/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:129
+fields	../servicos/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:19
+fields	../servicos/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:32
+fields	../servicos/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:45
+fields	../servicos/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:52
+fields	../servicos/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:59
+fields	../servicos/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:66
+fields	../servicos/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:73
+fields	../servicos/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:84
+fields	../servicos/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:95
+forms	../servicos/forms.py	/^from django import forms$/;"	kind:namespace	line:1
+forms	../usuarios/forms.py	/^from django import forms$/;"	kind:namespace	line:1
+forms.py	../servicos/forms.py	1;"	kind:file	line:1
+forms.py	../usuarios/forms.py	1;"	kind:file	line:1
+get	../servicos/views.py	/^    def get(self, request):$/;"	kind:member	line:109
+get	../servicos/views.py	/^    def get(self, request):$/;"	kind:member	line:40
+get	../servicos/views.py	/^    def get(self, request):$/;"	kind:member	line:74
+get	../usuarios/views.py	/^    def get(self, request):$/;"	kind:member	line:15
+get_perfil_logado	../perfis/views.py	/^def get_perfil_logado(request):$/;"	kind:function	line:18
+get_perfil_logado	../servicos/views.py	/^def get_perfil_logado(request):$/;"	kind:function	line:11
+get_wsgi_application	../projeto_alpha/wsgi.py	/^from django.core.wsgi import get_wsgi_application$/;"	kind:namespace	line:12
+include	../projeto_alpha/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:16
+index	../servicos/views.py	/^def index(request):$/;"	kind:function	line:15
+initial	../perfis/migrations/0001_initial.py	/^    initial = True$/;"	kind:variable	line:12
+initial	../servicos/migrations/0001_initial.py	/^    initial = True$/;"	kind:variable	line:11
+is_valid	../servicos/forms.py	/^    def is_valid(self):$/;"	kind:member	line:21
+is_valid	../servicos/forms.py	/^    def is_valid(self):$/;"	kind:member	line:53
+is_valid	../servicos/forms.py	/^    def is_valid(self):$/;"	kind:member	line:85
+is_valid	../usuarios/forms.py	/^    def is_valid(self):$/;"	kind:member	line:13
+is_valid	../usuarios/forms.py	/^    def is_valid(self):$/;"	kind:member	line:31
+lista_alvaras	../servicos/views.py	/^def lista_alvaras(request):$/;"	kind:function	line:19
+lista_autos	../servicos/views.py	/^def lista_autos(request):$/;"	kind:function	line:25
+lista_habitese	../servicos/views.py	/^def lista_habitese(request):$/;"	kind:function	line:31
+login_required	../perfis/views.py	/^from django.contrib.auth.decorators import login_required$/;"	kind:namespace	line:3
+login_required	../servicos/views.py	/^from django.contrib.auth.decorators import login_required$/;"	kind:namespace	line:5
+logradouro	../servicos/forms.py	/^    logradouro = forms.CharField(required=True)$/;"	kind:variable	line:10
+logradouro	../servicos/models.py	/^    logradouro = models.CharField(max_length=100)$/;"	kind:variable	line:41
+logradouro	../servicos/models.py	/^    logradouro = models.CharField(max_length=100)$/;"	kind:variable	line:52
+manage.py	../manage.py	1;"	kind:file	line:1
+matricula	../perfis/models.py	/^    matricula = models.CharField(max_length=30, null=True)$/;"	kind:variable	line:10
+matricula	../servicos/models.py	/^    matricula = models.CharField(max_length=20)$/;"	kind:variable	line:80
+matricula	../usuarios/forms.py	/^    matricula = forms.CharField(required=True)$/;"	kind:variable	line:10
+migrations	../perfis/migrations/0001_initial.py	/^from django.db import migrations, models$/;"	kind:namespace	line:6
+migrations	../servicos/migrations/0001_initial.py	/^from django.db import migrations, models$/;"	kind:namespace	line:5
+model_name	../servicos/migrations/0001_initial.py	/^            model_name='alvaraconstrucao',$/;"	kind:variable	line:172
+model_name	../servicos/migrations/0001_initial.py	/^            model_name='alvaraconstrucao',$/;"	kind:variable	line:177
+model_name	../servicos/migrations/0001_initial.py	/^            model_name='alvaraconstrucao',$/;"	kind:variable	line:182
+model_name	../servicos/migrations/0001_initial.py	/^            model_name='autoregularizacao',$/;"	kind:variable	line:157
+model_name	../servicos/migrations/0001_initial.py	/^            model_name='autoregularizacao',$/;"	kind:variable	line:162
+model_name	../servicos/migrations/0001_initial.py	/^            model_name='autoregularizacao',$/;"	kind:variable	line:167
+model_name	../servicos/migrations/0001_initial.py	/^            model_name='bairro',$/;"	kind:variable	line:152
+model_name	../servicos/migrations/0001_initial.py	/^            model_name='cidade',$/;"	kind:variable	line:147
+model_name	../servicos/migrations/0001_initial.py	/^            model_name='habitese',$/;"	kind:variable	line:137
+model_name	../servicos/migrations/0001_initial.py	/^            model_name='habitese',$/;"	kind:variable	line:142
+models	../perfis/migrations/0001_initial.py	/^from django.db import migrations, models$/;"	kind:namespace	line:6
+models	../perfis/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:7
+models	../perfis/models.py	/^from django.db import models$/;"	kind:namespace	line:1
+models	../servicos/migrations/0001_initial.py	/^from django.db import migrations, models$/;"	kind:namespace	line:5
+models	../servicos/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:6
+models	../servicos/models.py	/^from django.db import models$/;"	kind:namespace	line:1
+models	../usuarios/models.py	/^from django.db import models$/;"	kind:namespace	line:1
+models.py	../perfis/models.py	1;"	kind:file	line:1
+models.py	../servicos/models.py	1;"	kind:file	line:1
+models.py	../usuarios/models.py	1;"	kind:file	line:1
+name	../perfis/apps.py	/^    name = 'perfis'$/;"	kind:variable	line:5
+name	../perfis/migrations/0001_initial.py	/^            name='Perfil',$/;"	kind:variable	line:20
+name	../servicos/apps.py	/^    name = 'servicos'$/;"	kind:variable	line:5
+name	../servicos/migrations/0001_initial.py	/^            name='AlvaraConstrucao',$/;"	kind:variable	line:18
+name	../servicos/migrations/0001_initial.py	/^            name='AutoRegularizacao',$/;"	kind:variable	line:31
+name	../servicos/migrations/0001_initial.py	/^            name='Bairro',$/;"	kind:variable	line:44
+name	../servicos/migrations/0001_initial.py	/^            name='CPF',$/;"	kind:variable	line:65
+name	../servicos/migrations/0001_initial.py	/^            name='Cargo',$/;"	kind:variable	line:51
+name	../servicos/migrations/0001_initial.py	/^            name='Cidade',$/;"	kind:variable	line:58
+name	../servicos/migrations/0001_initial.py	/^            name='EnderecoObra',$/;"	kind:variable	line:72
+name	../servicos/migrations/0001_initial.py	/^            name='EnderecoRequerente',$/;"	kind:variable	line:83
+name	../servicos/migrations/0001_initial.py	/^            name='Estado',$/;"	kind:variable	line:94
+name	../servicos/migrations/0001_initial.py	/^            name='HabiteSe',$/;"	kind:variable	line:102
+name	../servicos/migrations/0001_initial.py	/^            name='Requerente',$/;"	kind:variable	line:118
+name	../servicos/migrations/0001_initial.py	/^            name='ResponsavelTecnico',$/;"	kind:variable	line:128
+name	../servicos/migrations/0001_initial.py	/^            name='cidade',$/;"	kind:variable	line:153
+name	../servicos/migrations/0001_initial.py	/^            name='endereco_obra',$/;"	kind:variable	line:158
+name	../servicos/migrations/0001_initial.py	/^            name='endereco_obra',$/;"	kind:variable	line:173
+name	../servicos/migrations/0001_initial.py	/^            name='estado',$/;"	kind:variable	line:148
+name	../servicos/migrations/0001_initial.py	/^            name='requerente',$/;"	kind:variable	line:138
+name	../servicos/migrations/0001_initial.py	/^            name='requerente',$/;"	kind:variable	line:163
+name	../servicos/migrations/0001_initial.py	/^            name='requerente',$/;"	kind:variable	line:178
+name	../servicos/migrations/0001_initial.py	/^            name='resp_tecnico',$/;"	kind:variable	line:143
+name	../servicos/migrations/0001_initial.py	/^            name='resp_tecnico',$/;"	kind:variable	line:168
+name	../servicos/migrations/0001_initial.py	/^            name='resp_tecnico',$/;"	kind:variable	line:183
+name	../usuarios/apps.py	/^    name = 'usuarios'$/;"	kind:variable	line:5
+nome	../perfis/models.py	/^    nome = models.CharField(max_length=255, null=False)$/;"	kind:variable	line:8
+nome	../usuarios/forms.py	/^    nome = forms.CharField(required=True)$/;"	kind:variable	line:6
+nome_bairro	../servicos/models.py	/^    nome_bairro = models.CharField(max_length=200)$/;"	kind:variable	line:24
+nome_cidade	../servicos/models.py	/^    nome_cidade = models.CharField(max_length=100)$/;"	kind:variable	line:16
+nome_estado	../servicos/models.py	/^    nome_estado = models.CharField(max_length=50)$/;"	kind:variable	line:8
+nome_requerente	../servicos/forms.py	/^    nome_requerente = forms.CharField(required=True)$/;"	kind:variable	line:41
+nome_requerente	../servicos/forms.py	/^    nome_requerente = forms.CharField(required=True)$/;"	kind:variable	line:73
+nome_requerente	../servicos/forms.py	/^    nome_requerente = forms.CharField(required=True)$/;"	kind:variable	line:9
+nome_requerente	../servicos/models.py	/^    nome_requerente = models.CharField(max_length=100)$/;"	kind:variable	line:61
+nome_responsavel	../servicos/models.py	/^    nome_responsavel = models.CharField(max_length=100)$/;"	kind:variable	line:78
+nome_usuario	../usuarios/forms.py	/^    nome_usuario = forms.CharField(required=True)$/;"	kind:variable	line:28
+nome_usuario	../usuarios/forms.py	/^    nome_usuario = forms.CharField(required=True)$/;"	kind:variable	line:7
+num_alvara	../servicos/forms.py	/^    num_alvara = forms.IntegerField(required=True)$/;"	kind:variable	line:6
+num_alvara	../servicos/models.py	/^    num_alvara = models.IntegerField(unique=True)$/;"	kind:variable	line:87
+num_auto	../servicos/forms.py	/^    num_auto = forms.IntegerField(required=True)$/;"	kind:variable	line:38
+num_auto	../servicos/models.py	/^    num_auto = models.IntegerField(unique=True)$/;"	kind:variable	line:103
+num_habitese	../servicos/forms.py	/^    num_habitese = forms.IntegerField(required=True)$/;"	kind:variable	line:70
+num_habitese	../servicos/models.py	/^    num_habitese = models.IntegerField(unique=True)$/;"	kind:variable	line:119
+num_processo	../servicos/forms.py	/^    num_processo = forms.CharField(required=True)$/;"	kind:variable	line:72
+num_processo	../servicos/forms.py	/^    num_processo = forms.CharField(required=True)$/;"	kind:variable	line:8
+num_processo	../servicos/forms.py	/^    num_processo = forms.IntegerField(required=True)$/;"	kind:variable	line:40
+num_processo	../servicos/models.py	/^    num_processo = models.CharField(max_length=12)$/;"	kind:variable	line:105
+num_processo	../servicos/models.py	/^    num_processo = models.CharField(max_length=12)$/;"	kind:variable	line:121
+num_processo	../servicos/models.py	/^    num_processo = models.CharField(max_length=12)$/;"	kind:variable	line:89
+numero	../servicos/forms.py	/^    numero = forms.CharField(required=True)$/;"	kind:variable	line:11
+numero	../servicos/forms.py	/^    numero = forms.CharField(required=True)$/;"	kind:variable	line:43
+numero	../servicos/forms.py	/^    numero = forms.CharField(required=True)$/;"	kind:variable	line:75
+numero	../servicos/models.py	/^    numero = models.CharField(max_length=20)$/;"	kind:variable	line:42
+numero	../servicos/models.py	/^    numero = models.CharField(max_length=20)$/;"	kind:variable	line:53
+observacao	../servicos/forms.py	/^    observacao = forms.Textarea()$/;"	kind:variable	line:17
+observacao	../servicos/forms.py	/^    observacao = forms.Textarea()$/;"	kind:variable	line:49
+observacao	../servicos/forms.py	/^    observacao = forms.Textarea()$/;"	kind:variable	line:81
+observacao	../servicos/models.py	/^    observacao = models.TextField(blank=True)$/;"	kind:variable	line:110
+observacao	../servicos/models.py	/^    observacao = models.TextField(blank=True)$/;"	kind:variable	line:128
+observacao	../servicos/models.py	/^    observacao = models.TextField(blank=True)$/;"	kind:variable	line:94
+operations	../perfis/migrations/0001_initial.py	/^    operations = [$/;"	kind:variable	line:18
+operations	../servicos/migrations/0001_initial.py	/^    operations = [$/;"	kind:variable	line:16
+os	../manage.py	/^import os$/;"	kind:namespace	line:2
+os	../projeto_alpha/settings.py	/^import os$/;"	kind:namespace	line:13
+os	../projeto_alpha/wsgi.py	/^import os$/;"	kind:namespace	line:10
+perfil	../perfis/views.py	/^def perfil(request):$/;"	kind:function	line:9
+post	../servicos/views.py	/^    def post(self, request):$/;"	kind:member	line:112
+post	../servicos/views.py	/^    def post(self, request):$/;"	kind:member	line:43
+post	../servicos/views.py	/^    def post(self, request):$/;"	kind:member	line:77
+post	../usuarios/views.py	/^    def post(self, request):$/;"	kind:member	line:18
+redirect	../servicos/views.py	/^from django.shortcuts import render, redirect$/;"	kind:namespace	line:1
+redirect	../usuarios/views.py	/^from django.shortcuts import render, redirect$/;"	kind:namespace	line:1
+render	../perfis/views.py	/^from django.shortcuts import render$/;"	kind:namespace	line:1
+render	../servicos/views.py	/^from django.shortcuts import render, redirect$/;"	kind:namespace	line:1
+render	../usuarios/views.py	/^from django.shortcuts import render, redirect$/;"	kind:namespace	line:1
+requerente	../servicos/models.py	/^    requerente = models.ForeignKey(Requerente, on_delete=models.CASCADE)$/;"	kind:variable	line:106
+requerente	../servicos/models.py	/^    requerente = models.ForeignKey(Requerente, on_delete=models.CASCADE)$/;"	kind:variable	line:122
+requerente	../servicos/models.py	/^    requerente = models.ForeignKey(Requerente, on_delete=models.CASCADE)$/;"	kind:variable	line:90
+resp_tecnico	../servicos/forms.py	/^    resp_tecnico = forms.Select()$/;"	kind:variable	line:19
+resp_tecnico	../servicos/forms.py	/^    resp_tecnico = forms.Select()$/;"	kind:variable	line:51
+resp_tecnico	../servicos/forms.py	/^    resp_tecnico = forms.Select()$/;"	kind:variable	line:83
+resp_tecnico	../servicos/models.py	/^    resp_tecnico = models.ForeignKey(ResponsavelTecnico, on_delete=models.CASCADE)$/;"	kind:variable	line:112
+resp_tecnico	../servicos/models.py	/^    resp_tecnico = models.ForeignKey(ResponsavelTecnico, on_delete=models.CASCADE)$/;"	kind:variable	line:130
+resp_tecnico	../servicos/models.py	/^    resp_tecnico = models.ForeignKey(ResponsavelTecnico, on_delete=models.CASCADE)$/;"	kind:variable	line:96
+senha	../usuarios/forms.py	/^    senha = forms.CharField(required=True)$/;"	kind:variable	line:29
+senha	../usuarios/forms.py	/^    senha = forms.CharField(required=True)$/;"	kind:variable	line:8
+settings	../perfis/migrations/0001_initial.py	/^from django.conf import settings$/;"	kind:namespace	line:5
+settings.py	../projeto_alpha/settings.py	1;"	kind:file	line:1
+sys	../manage.py	/^import sys$/;"	kind:namespace	line:3
+telefone	../perfis/models.py	/^    telefone = models.CharField(max_length=255, null=False)$/;"	kind:variable	line:9
+telefone	../servicos/models.py	/^    telefone = models.CharField(max_length=11)$/;"	kind:variable	line:64
+telefone	../usuarios/forms.py	/^    telefone = forms.CharField(required=True)$/;"	kind:variable	line:11
+template	../servicos/views.py	/^    template = 'cadastrar_alvara.html'$/;"	kind:variable	line:38
+template	../servicos/views.py	/^    template = 'cadastrar_auto.html'$/;"	kind:variable	line:72
+template	../servicos/views.py	/^    template = 'cadastrar_habitese.html'$/;"	kind:variable	line:107
+template	../usuarios/views.py	/^    template = 'registrar.html'$/;"	kind:variable	line:13
+tests.py	../perfis/tests.py	1;"	kind:file	line:1
+tests.py	../servicos/tests.py	1;"	kind:file	line:1
+tests.py	../usuarios/tests.py	1;"	kind:file	line:1
+trocar_senha	../usuarios/views.py	/^def trocar_senha(self, perfil_id, nova_senha):$/;"	kind:function	line:39
+uf	../servicos/models.py	/^    uf = models.CharField(max_length=2, unique=True)$/;"	kind:variable	line:9
+unicode_literals	../perfis/migrations/0001_initial.py	/^from __future__ import unicode_literals$/;"	kind:namespace	line:3
+unicode_literals	../servicos/migrations/0001_initial.py	/^from __future__ import unicode_literals$/;"	kind:namespace	line:3
+url	../perfis/urls.py	/^from django.conf.urls import url$/;"	kind:namespace	line:1
+url	../projeto_alpha/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:16
+url	../servicos/urls.py	/^from django.conf.urls import url$/;"	kind:namespace	line:1
+url	../usuarios/urls.py	/^from django.conf.urls import url$/;"	kind:namespace	line:1
+urlpatterns	../perfis/urls.py	/^urlpatterns = [$/;"	kind:variable	line:4
+urlpatterns	../projeto_alpha/urls.py	/^urlpatterns = [$/;"	kind:variable	line:19
+urlpatterns	../servicos/urls.py	/^urlpatterns = [$/;"	kind:variable	line:5
+urlpatterns	../usuarios/urls.py	/^urlpatterns = [$/;"	kind:variable	line:5
+urls.py	../perfis/urls.py	1;"	kind:file	line:1
+urls.py	../projeto_alpha/urls.py	1;"	kind:file	line:1
+urls.py	../servicos/urls.py	1;"	kind:file	line:1
+urls.py	../usuarios/urls.py	1;"	kind:file	line:1
+usuario	../perfis/models.py	/^    usuario = models.OneToOneField(User, related_name='perfil', on_delete=models.CASCADE)$/;"	kind:variable	line:11
+views	../perfis/urls.py	/^from . import views$/;"	kind:namespace	line:2
+views	../servicos/urls.py	/^from . import views$/;"	kind:namespace	line:2
+views	../usuarios/urls.py	/^from django.contrib.auth import views$/;"	kind:namespace	line:3
+views.py	../perfis/views.py	1;"	kind:file	line:1
+views.py	../servicos/views.py	1;"	kind:file	line:1
+views.py	../usuarios/views.py	1;"	kind:file	line:1
+wsgi.py	../projeto_alpha/wsgi.py	1;"	kind:file	line:1

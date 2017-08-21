@@ -1,0 +1,54 @@
+{% extends 'principal/base.html' %}
+{% block body %}
+    <div class="container">
+        <br>
+        <h5>Serviços</h5>
+        <div class="row section sem-espaco-linha">
+            <!-- Card Pessoas -->
+            <div class="col l3 m4 s12">
+                <div class="card waves-effect grey lighten-2" id="card-index">
+                    <div class="card-content center">
+                        <a href="#">
+                            <i class="material-icons medium amber-text">people</i>
+                            <p id="texto-card">Pessoas (Adicione, busque pessoas)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card Consulta Geral -->
+            <div class="col l3 m4 s12">
+                <div class="card waves-effect grey lighten-2" id="card-index">
+                    <div class="card-content center">
+                        <a href="#">
+                            <i class="material-icons medium amber-text">search</i>
+                            <p id="texto-card">Consulta Geral (Busque documentos)</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card Documentos -->
+            <div class="col l3 m4 s12">
+                <div class="card waves-effect grey lighten-2" id="card-index">
+                    <div class="card-content center">
+                        <a href="{% url 'documentos' %}">
+                            <i class="material-icons medium amber-text">insert_drive_file</i>
+                            <p id="texto-card">Documentos (Gerencie documentos)</p>
+                        </a>
+                    </div>
+                </div> <!-- fim do card -->
+            </div>
+            <!-- Card Informações Gerais -->
+            <div class="col l3 m4 s12">
+                <div class="card waves-effect grey lighten-2" id="card-index">
+                    <div class="card-content center">
+                        <a href="#">
+                            <i class="material-icons medium amber-text">info</i>
+                            <p id="texto-card">Informações Gerais</p>
+                        </a>
+                    </div>
+                </div> <!-- fim do card -->
+            </div>
+        </div> <!-- Fim do row -->
+    </div>
+    <br>
+{% endblock %}

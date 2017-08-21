@@ -1,0 +1,53 @@
+{% extends 'principal/base.html' %}
+{% load staticfiles %}
+{% block body %}
+    <div class="container">
+        <br>
+        <h5>Serviços</h5>
+        <div class="row section sem-espaco-linha">
+            <div class="col l4 m12 s12">
+                <div class="card">
+                    <div class="card-image card-imagem-fundo">
+                        <img src="{% static 'principal/img/auto.jpg' %}" alt="Logotipo do Auto de Regularização">
+                    </div>
+                    <a href="{% url 'add_auto' %}" class="add-btn-flt btn btn-floating amber darken-1 waves-effect">
+                        <i class="material-icons">add</i>
+                    </a>
+                    <div class="card-content center">
+                        <span id="texto-card" class="blue-text">Auto de Regularização</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col l4 m12 s12">
+                <div class="card">
+                    <div class="card-image card-imagem-fundo">
+                        <img src="{% static 'principal/img/construcao.jpg' %}" alt="Logotipo do Alvará de Construção">
+                    </div>
+
+                    <a href="{% url 'add_alvara' %}" class="add-btn-flt btn btn-floating amber darken-1 waves-effect">
+                        <i class="material-icons">add</i>
+                    </a>
+
+                    <div class="card-content center">
+                        <span id="texto-card" class="blue-text">Alvará de Construção</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col l4 m12 s12">
+                <div class="card">
+                    <div class="card-image card-imagem-fundo">
+                        <img src="{% static 'principal/img/habitese.jpg' %}" alt="Logotipo do Habite-se">
+                    </div>
+                    <a href="#" class="add-btn-flt btn btn-floating amber darken-1 waves-effect">
+                        <i class="material-icons">add</i>
+                    </a>
+                    <div class="card-content center">
+                        <span id="texto-card" class="blue-text">Habite-se</span>
+                    </div>
+                </div>  <!-- fim do card -->
+            </div>
+        </div> <!-- Fim do row -->
+    </div>
+{% endblock %}

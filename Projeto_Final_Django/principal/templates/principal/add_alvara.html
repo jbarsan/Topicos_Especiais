@@ -1,0 +1,147 @@
+{% extends 'principal/base.html' %}
+{% load staticfiles %}
+{% block body %}
+    <div class="row">
+        <h4 class="center blue-text">Adicionar Alvará de Construção</h4>
+    </div> <!-- Fim da row -->
+    <div class="row">
+        <form action="#" method="post">
+            {% csrf_token %}
+            <!-- Número do Alvará -->
+            <div class="row">
+                <div class="col s12">
+                    Número:
+                    <div class="input-field inline">
+                        <input name="num_alvara" id="num_alvara" type="number" min=0 class="validate">
+                        <label for="num_alvara"></label>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <!-- Ano do Alvará -->
+            <div class="row">
+                <div class="col s12">
+                    Ano:
+                    <div class="input-field inline">
+                        <input name="ano_alvara" id="ano_alvara" type="number" min=2000 class="validate">
+                        <label for="ano_alvara"></label>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <!-- Número do processo -->
+            <div class="row">
+                <div class="col s12">
+                    Núm. Processo:
+                    <div class="input-field inline">
+                        <input placeholder="Ex.: 10.0123/2017" name="num_processo" id="num_processo" type="text"
+                               class="validate" data-length="12">
+                        <label for="num_processo"></label>
+                    </div>
+                </div>
+            </div> <!-- Fim da row -->
+            <hr>
+            <!-- Nome do Requerente -->
+            <div class="row">
+                <div class="col s12">
+                    Requerente:
+                    <div class="input-field inline">
+                        <select name="nome_requerente" id="nome_requerente">
+                            <option value="" selected>--------------</option>
+                            <option value="Fulano">Fulano</option>
+                            <option value="Floriano">Floriano</option>
+                            <option value="Juliano">Juliano</option>
+                        </select>
+                        <label for="nome_requerente"></label>
+                    </div>
+                </div>
+            </div> <!-- Fim da row -->
+            <hr>
+            <!-- Endereço da Obra -->
+            <div class="row">
+                <div class="col s12">
+                    Endereço da obra:
+                    <div class="input-field inline">
+                        <select name="end_obra" id="end_obra">
+                            <option value="" selected>--------------</option>
+                            <option value="End_1">Rua das Pulgas 100, Cão Duro, Teresina</option>
+                            <option value="End_2">Av. Alejandro Perez 999, Novo México, Teresina</option>
+                            <option value="End_3">Rua das Tulipas 203, Jardim de Cima, Teresina</option>
+                        </select>
+                        <label for="end_obra"></label>
+                    </div>
+                </div>
+            </div> <!-- Fim da row -->
+            <hr>
+            <!-- Área do Terreno -->
+            <div class="row">
+                <div class="col s12">
+                    Área do Terreno:
+                    <div class="input-field inline">
+                        <input name="area_terreno" id="area_terreno" type="number" min=0 step=0.01 class="validate">
+                        <label for="area_terreno"></label>
+                    </div>
+                </div>
+            </div> <!-- Fim do row -->
+            <hr>
+            <!-- Área Construída -->
+            <div class="row">
+                <div class="col s12">
+                    Área Construída:
+                    <div class="input-field inline">
+                        <input name="area_construida" id="area_construida" type="number" min=0 step=0.01
+                               class="validate">
+                        <label for="area_construida"></label>
+                    </div>
+                </div>
+            </div> <!-- Fim do row -->
+            <hr>
+            <!-- Responsável Técnico -->
+            <div class="row">
+                <div class="col s12">
+                    Resp. Técnico:
+                    <div class="input-field inline">
+                        <select name="resp_tec" id="resp_tec">
+                            <option value="" disabled selected>Responsável</option>
+                            <option value="1">Fulano</option>
+                            <option value="2">Sicrano</option>
+                            <option value="3">Beltrano</option>
+                        </select>
+                        <label for="resp_tec"></label>
+                    </div>
+                </div>
+            </div> <!-- Fim do row -->
+            <hr>
+            <!-- Data do Alvará -->
+            <div class="row">
+                <div class="col s12">
+                    Data do Alvará:
+                    <div class="input-field inline">
+                        <input type="date" id="data_alvara">
+                        <label for="data_alvara"></label>
+                    </div>
+                </div>
+            </div> <!-- Fim do row -->
+            <hr>
+            <!-- Observações -->
+            <div class="row">
+                <div class="col s12">
+                    Observações:
+                    <div class="input-field inline">
+                        <textarea id="observacao" class="materialize-textarea"></textarea>
+                        <label for="observacao"></label>
+                    </div>
+                </div>
+            </div> <!-- Fim da row -->
+            <hr>
+            <!-- Botão submit -->
+            <div class="row">
+                <div class="right">
+                    <button class="btn waves-effect waves-light blue darken-2" type="submit" name="enviar">Salvar
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </div> <!-- Fim do row -->
+        </form>
+    </div> <!-- Fim do Row global -->
+{% endblock %}
