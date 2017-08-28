@@ -48,13 +48,8 @@ class Player(models.Model):
 
 
 class Score(models.Model):
-    player = models.ForeignKey(
-        Player,
-        related_name='scores',
-        on_delete=models.CASCADE)
-    game = models.ForeignKey(
-        Game,
-        on_delete=models.CASCADE)
+    player = models.ForeignKey(Player, related_name='scores', on_delete=models.CASCADE)
+    game = models.ForeignKey(Game, on_delete=models.CASCADE)
     score = models.IntegerField()
     score_date = models.DateTimeField()
 

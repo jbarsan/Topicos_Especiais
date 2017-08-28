@@ -1,4 +1,6 @@
-from rest_framework import serializers
+from rest_framework import serializers, generics
+from rest_framework.response import Response
+from rest_framework.reverse import reverse
 from .models import GameCategory
 from .models import Game
 from .models import Player
@@ -6,6 +8,9 @@ from .models import Score
 
 
 class GameSerializer(serializers.HyperlinkedModelSerializer):
+    game_category = serializers.SlugRelatedField(queryset=GameCategory.objects.all(),
+                                                 slug_field='name')
+
     class Meta:
         model = Game
         fields = (
@@ -24,8 +29,32 @@ class GameCategorySerializer(serializers.HyperlinkedModelSerializer):
 
 
 class ScoreSerializer(serializers.HyperlinkedModelSerializer):
-    pass
+    game = serializers.SlugRelatedField(queryset=Game.objects.all(),
+                                        slug_field='name')
+    player = serializers.SlugRelatedField(queryset=Player.objects.all(),
+                                          slug_field='name')
+
+    class Meta:
+        model = Score
+        fields = (
+            'url',
+            'pk',
+            'score',
+            'score_date',
+            'player',
+            'game',
+        )
 
 
 class PlayerSerializer(serializers.HyperlinkedModelSerializer):
-    pass
+    scores = ScoreSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Player
+        fields = (
+            'url',
+            'name',
+            'gender',
+            'scores',
+        )
+
