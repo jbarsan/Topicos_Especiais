@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework.reverse import reverse
+from rest_framework.reverse import reverse  # Não é do django
 from rest_framework import generics
 from rest_framework.response import Response
 from .serializers import *
@@ -9,22 +9,25 @@ from .models import *
 # Create your views here.
 class ApiRoot(generics.GenericAPIView):
     name = 'api-root'
+
     def get(self, request, *args, **kwargs):
         return Response({
-            'users': reverse(ListaUser.name, request=request),
+            'usuários': reverse(ListaUsuario.name, request=request),
             'posts': reverse(ListaPost.name, request=request),
-            'comments': reverse(ListaComentarios.name, request=request)
+            'comentários': reverse(ListaComentarios.name, request=request),
+            'endereços': reverse(ListaEndereco.name, request=request)
+
         })
-    # Lembrar que o reverse é do rest_framework e não do django
+        # Lembrar que o reverse é do rest_framework e não do django
 
 
-class ListaUser(generics.ListCreateAPIView):
+class ListaUsuario(generics.ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     name = 'user-list'
 
 
-class DetalheUser(generics.RetrieveUpdateDestroyAPIView):
+class DetalheUsuario(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserDetailSerializer
     name = 'user-detail'
@@ -54,3 +57,25 @@ class DetalheComentario(generics.RetrieveUpdateDestroyAPIView):
     name = 'comment-detail'
 
 
+class ListaEndereco(generics.ListCreateAPIView):
+    queryset = Address.objects.all()
+    serializer_class = AddressSerializer
+    name = 'address-list'
+
+
+class DetalheEndereco(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Address.objects.all()
+    serializer_class = AddressSerializer
+    name = 'address-detail'
+
+
+class ListaGeolocalizacao(generics.ListCreateAPIView):
+    queryset = Geolocation.objects.all()
+    serializer_class = GeolocationSerializer
+    name = 'geolocation-list'
+
+
+class DetalheGeolocalizacao(generics.ListCreateAPIView):
+    queryset = Geolocation.objects.all()
+    serializer_class = GeolocationSerializer
+    name = 'geolocation-detail'

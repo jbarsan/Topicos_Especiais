@@ -53,3 +53,4 @@ class Comment(models.Model):
 
     def __str__(self):
         text = 'Comentado por: {}'.format(self.name)
+        return text

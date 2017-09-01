@@ -3,7 +3,7 @@ from .models import *
 
 
 # class GeolocationSerializer(serializers.HyperlinkedModelSerializer):
-class GeolocationSerializer(serializers.ModelSerializer):
+class GeolocationSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Geolocation
         fields = ['url',
@@ -14,7 +14,7 @@ class GeolocationSerializer(serializers.ModelSerializer):
 
 # class AddressSerializer(serializers.HyperlinkedModelSerializer):
 # Erro esquisito aqui 8-(
-class AddressSerializer(serializers.ModelSerializer):
+class AddressSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Address
         fields = ['url',
@@ -26,7 +26,7 @@ class AddressSerializer(serializers.ModelSerializer):
                   'geo']
 
 
-class UserSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
         fields = ['url',
@@ -77,7 +77,7 @@ class PostDetailSerializer(serializers.HyperlinkedModelSerializer):
                   'comments']
 
 
-class UserDetailSerializer(serializers.ModelSerializer):
+class UserDetailSerializer(serializers.HyperlinkedModelSerializer):
     posts = PostSerializer(many=True, read_only=True)
 
     class Meta:
