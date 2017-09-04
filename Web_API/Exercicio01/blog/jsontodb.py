@@ -56,14 +56,15 @@ def import_data():
                             username=user['username'],
                             email=user['email'],
                             address=address)
-    '''
+    
     for post in as_json['posts']:
         user = User.objects.get(id=post['userId'])
         Post.objects.create(id=post['id'],
+                            owner=post['ownerId'],
                             title=post['title'],
                             body=post['body'],
                             user=user)
-
+    '''
     for comment in as_json['comments']:
         post = Post.objects.get(id=comment['postId'])
         Comment.objects.create(id=comment['id'],

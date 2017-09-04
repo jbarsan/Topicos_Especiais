@@ -25,27 +25,38 @@ class Address(models.Model):
 
 
 class User(models.Model):
-    user = models.OneToOneField('auth.User', related_name='usuario')
-    address = models.ForeignKey(Address)
+    user = models.OneToOneField(UserDJ)
     name = models.CharField(max_length=100)
-
-    @property
-    # username = models.CharField(max_length=100)
-    def username(self):
-        return self.user.username
-
-    @property
-    # email = models.EmailField()
-    def email(self):
-        return self.user.email
-
-    @property
-    def password(self):
-        return self.user.password
+    username = models.CharField(max_length=100)
+    email = models.EmailField()
+    password = models.CharField(max_length=16, default='password123')
+    address = models.ForeignKey(Address)
 
     def __str__(self):
-        text = '{0}, {1}'.format(self.name, self.email)
+        text = '{0}, {1}, {2}'.format(self.username, self.name, self.email)
         return text
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+        if not self.id:
+            cadastro = User.objects.filter(username=self.username).count()
+            if cadastro:
+                print('Usuário já cadastrado')
+
+            usuario = UserDJ.objects.filter(username=self.username)
+            if usuario:
+                usr = usuario[0]
+            else:
+                usr = UserDJ.objects.create_user(self.username, self.email, self.password)
+            usr.save()
+            self.user = usr
+        else:
+            self.user.username = self.username
+            self.user.email = self.email
+            self.user.set_password(self.password)
+            self.user.save()
+
+        super(User, self).save()
 
 
 class Post(models.Model):
