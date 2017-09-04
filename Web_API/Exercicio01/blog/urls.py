@@ -11,6 +11,6 @@ urlpatterns = [
     url(r'^comments/(?P<pk>[0-9]+)/$', DetalheComentario.as_view(), name=DetalheComentario.name),
     url(r'^address/$', ListaEndereco.as_view(), name=ListaEndereco.name),
     url(r'^address/(?P<pk>[0-9]+)/$', DetalheEndereco.as_view(), name=DetalheEndereco.name),
-    url(r'geolocation/$', ListaGeolocalizacao.as_view(), name=ListaGeolocalizacao.name),
+    url(r'^geolocation/$', ListaGeolocalizacao.as_view(), name=ListaGeolocalizacao.name),
     url(r'^geolocation/(?P<pk>[0-9]+)/$', DetalheGeolocalizacao.as_view(), name=DetalheGeolocalizacao.name),
 ]

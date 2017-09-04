@@ -21,6 +21,10 @@ class Game(models.Model):
     )
     release_date = models.DateTimeField()
     played = models.BooleanField(default=False)
+    owner = models.ForeignKey(
+        'auth.User',
+        related_name='games',
+        on_delete=models.CASCADE)
 
     class Meta:
         ordering = ('name',)

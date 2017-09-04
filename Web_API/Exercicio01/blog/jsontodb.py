@@ -41,7 +41,7 @@ def import_data():
     #         }
     #     }
     # }
-
+    '''
     for user in as_json['users']:
         geo = Geolocation.objects.create(lat=user['address']['geo']['lat'],
                                          lng=user['address']['geo']['lng'])
@@ -56,7 +56,7 @@ def import_data():
                             username=user['username'],
                             email=user['email'],
                             address=address)
-
+    '''
     for post in as_json['posts']:
         user = User.objects.get(id=post['userId'])
         Post.objects.create(id=post['id'],

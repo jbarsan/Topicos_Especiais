@@ -2,7 +2,6 @@ from rest_framework import serializers
 from .models import *
 
 
-# class GeolocationSerializer(serializers.HyperlinkedModelSerializer):
 class GeolocationSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Geolocation
@@ -12,8 +11,6 @@ class GeolocationSerializer(serializers.HyperlinkedModelSerializer):
                   'lng']
 
 
-# class AddressSerializer(serializers.HyperlinkedModelSerializer):
-# Erro esquisito aqui 8-(
 class AddressSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Address
@@ -38,11 +35,13 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class PostSerializer(serializers.HyperlinkedModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.username')
     user = serializers.SlugRelatedField(queryset=User.objects.all(), slug_field='username')
 
     class Meta:
         model = Post
         fields = ['url',
+                  'owner',
                   'id',
                   'title',
                   'body',
@@ -89,3 +88,13 @@ class UserDetailSerializer(serializers.HyperlinkedModelSerializer):
                   'name',
                   'address',
                   'posts']
+
+
+class UserPostSerializers(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Post
+        fields = ['url',
+                  'id',
+                  'title',
+                  'body',
+                  'user']

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User as UserDJ
 
 
 # Create your models here.
@@ -7,8 +8,7 @@ class Geolocation(models.Model):
     lng = models.FloatField()
 
     def __str__(self):
-        text = 'Lat: {}' \
-               'Lng: {}'.format(self.lat, self.lng)
+        text = 'Lat: {} / Lng: {}'.format(self.lat, self.lng)
         return text
 
 
@@ -25,13 +25,26 @@ class Address(models.Model):
 
 
 class User(models.Model):
-    username = models.CharField(max_length=100)
-    name = models.CharField(max_length=100)
-    email = models.EmailField()
+    user = models.OneToOneField('auth.User', related_name='usuario')
     address = models.ForeignKey(Address)
+    name = models.CharField(max_length=100)
+
+    @property
+    # username = models.CharField(max_length=100)
+    def username(self):
+        return self.user.username
+
+    @property
+    # email = models.EmailField()
+    def email(self):
+        return self.user.email
+
+    @property
+    def password(self):
+        return self.user.password
 
     def __str__(self):
-        text = '{0}, {1}, {2}'.format(self.username, self.name, self.email)
+        text = '{0}, {1}'.format(self.name, self.email)
         return text
 
 
@@ -39,6 +52,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     body = models.TextField()
     user = models.ForeignKey(User)
+    owner = models.ForeignKey('auth.User', related_name='posts', on_delete=models.CASCADE)
 
     def __str__(self):
         text = 'Postado: {0}, Título: {1}'.format(self.user.name, self.title)
@@ -49,7 +63,7 @@ class Comment(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     body = models.TextField()
-    post = models.ForeignKey(Post)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
 
     def __str__(self):
         text = 'Comentado por: {}'.format(self.name)
