@@ -21,17 +21,23 @@ from rest_framework.reverse import reverse
 from rest_framework import permissions
 from .permissions import IsOwnerOrReadOnly
 
+from rest_framework.throttling import ScopedRateThrottle
+
 
 class GameCategoryList(generics.ListCreateAPIView):
     queryset = GameCategory.objects.all()
     serializer_class = GameCategorySerializer
     name = 'gamecategory-list'
+    throttle_scope = 'game-categories'
+    throttle_classes = (ScopedRateThrottle,)
 
 
 class GameCategoryDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = GameCategory.objects.all()
     serializer_class = GameCategorySerializer
     name = 'gamecategory-detail'
+    throttle_scope = 'game-categories'
+    throttle_classes = (ScopedRateThrottle,)
 
 
 class GameList(generics.ListCreateAPIView):
