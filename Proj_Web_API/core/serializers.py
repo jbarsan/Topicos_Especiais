@@ -7,16 +7,17 @@ from django.contrib.auth.models import User
 class CidadeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Cidade
-        fields = ('url', 'id', 'nome_cidade', 'estado')
+        fields = ('url', 'nome_cidade', 'estado')
 
 
 # --- BAIRRO --- #
 class BairroSerializer(serializers.HyperlinkedModelSerializer):
-    cidade = serializers.HyperlinkedRelatedField(queryset=Cidade.objects.all(), view_name='cidade-detail')
+    # cidade = serializers.HyperlinkedRelatedField(queryset=Cidade.objects.all(), view_name='cidade-detail')
+    cidade = CidadeSerializer()
 
     class Meta:
         model = Bairro
-        fields = ('url', 'id', 'nome_bairro', 'cidade')
+        fields = ('url', 'nome_bairro', 'cidade')
 
 
 # --- REQUERENTE --- #
@@ -25,7 +26,7 @@ class RequerenteSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Requerente
-        fields = ('url', 'id', 'nome', 'cpf', 'telefone', 'endereco',
+        fields = ('url', 'nome', 'cpf', 'telefone', 'endereco',
                   'num_residencia', 'complemento', 'bairro', 'cep', 'data_cadastro')
 
 
@@ -33,16 +34,18 @@ class RequerenteSerializer(serializers.HyperlinkedModelSerializer):
 class CargoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Cargo
-        fields = ('url', 'id', 'descricao')
+        fields = ('url', 'descricao')
 
 
 # --- RESPONSÁVEL TÉCNICO --- #
 class RespTecnicoSerializer(serializers.HyperlinkedModelSerializer):
+    # Exibe os dados que vem do 'Cargo'
     cargo = serializers.HyperlinkedRelatedField(queryset=Cargo.objects.all(), view_name='cargo-detail')
+    #cargo = CargoSerializer()
 
     class Meta:
         model = ResponsavelTecnico
-        fields = ('url', 'id', 'nome', 'cargo')
+        fields = ('url', 'nome', 'cargo')
 
 
 # --- ALVARÁ DE CONSTRUÇÃO --- #
@@ -99,11 +102,15 @@ class HabiteSeSerializer(serializers.HyperlinkedModelSerializer):
 
 # --- USUÁRIOS --- #
 class UserSerializer(serializers.HyperlinkedModelSerializer):
-    matricula = serializers.HyperlinkedRelatedField(view_name='atendente-detail', queryset=Atendente.objects.all())
-
     class Meta:
         model = User
-        fields = ('url', 'id', 'username', 'first_name', 'last_name', 'email', 'matricula')
+        fields = ('url', 'username', 'first_name', 'last_name', 'email',)
 
 
+class AtendenteSerializer(serializers.HyperlinkedModelSerializer):
+    # Lista todos os dados do Atendente vindo do 'User'
+    user = UserSerializer()
 
+    class Meta:
+        model = Atendente
+        fields = ('url', 'user', 'matricula')

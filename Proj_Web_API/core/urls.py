@@ -22,6 +22,7 @@ router.register(r'cidade', views.CidadeViewSet)
 router.register(r'bairro', views.BairroViewSet)
 router.register(r'cargo', views.CargoViewSet)
 router.register(r'atendente', views.AtendenteViewSet)
+router.register(r'user', views.UserViewSet)
 
 
 urlpatterns = [

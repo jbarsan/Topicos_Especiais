@@ -70,24 +70,31 @@ class RespTecViewSet(viewsets.ModelViewSet):
 class AlvaraViewSet(viewsets.ModelViewSet):
     queryset = AlvaraConstrucao.objects.all()
     serializer_class = AlvaraSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly,)
+    permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly,)
 
 
 class AutoViewSet(viewsets.ModelViewSet):
     queryset = AutoRegularizacao.objects.all()
     serializer_class = AutoSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly,)
+    permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly,)
 
 
 class HabiteSeViewSet(viewsets.ModelViewSet):
     queryset = HabiteSe.objects.all()
     serializer_class = HabiteSeSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly,)
+    permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly,)
 
 
-class AtendenteViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Atendente.objects.all()
+class UserViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = User.objects.all()
     serializer_class = UserSerializer
+    permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly,)
+
+
+class AtendenteViewSet(viewsets.ModelViewSet):
+    queryset = Atendente.objects.all()
+    serializer_class = AtendenteSerializer
+    permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly,)
 
 
 '''

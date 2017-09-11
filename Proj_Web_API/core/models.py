@@ -124,10 +124,13 @@ class HabiteSe(Documento):
 
 
 # --- Testes --- #
+# TODO: Fazer a alteração na classe pra incluir o nome do atendente e a senha
 class Atendente(models.Model):
     user = models.OneToOneField('auth.User', related_name='atendente', on_delete=models.CASCADE)
+    # nome = user.get_full_name()
+    # senha = user.set_password()
     matricula = models.CharField(max_length=10)
 
     def __str__(self):
-        text = '{0} {1}, {2}, {3}'.format(self.user.first_name, self.user.last_name, self.user.username, self.matricula)
+        text = '{0}, {1}, {2}'.format(self.user.get_full_name(), self.user.get_username(), self.matricula)
         return text
