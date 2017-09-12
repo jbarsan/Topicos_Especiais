@@ -6,6 +6,8 @@ from rest_framework.response import Response
 from rest_framework.reverse import reverse
 from rest_framework.decorators import api_view
 
+import rest_framework_filters as filters
+
 # Create your views here.
 # --- END POINT DA API --- #
 """
@@ -29,6 +31,101 @@ def api_root(request):
     })
 
 
+# --- FILTROS ---#
+"""
+Para filtrar os dados, estou usando o django-rest-framework-filters, que um é 
+uma extensão do Django REST framework e do Django-filter que facilita o filtro em todos os relacionamentos.
+Na variável 'fields', é possível especificar o tipo de argumento que será feita na consulta, como 'exacts', 'in',
+'startswith' e todas as outras opções dos field-lookups do Django. Esses argumentos precisam ser checados, pois podem
+ser diferentes de acordo com o banco de dados utilizado.
+Doc.: https://docs.djangoproject.com/pt-br/1.11/ref/models/querysets/#field-lookups
+Doc.: https://github.com/philipn/django-rest-framework-filters
+"""
+
+
+class CidadeFilter(filters.FilterSet):
+    class Meta:
+        model = Cidade
+        fields = {'nome_cidade': ['icontains'],
+                  'estado': ['exact']
+                  }
+
+
+class BairroFilter(filters.FilterSet):
+    cidade = filters.RelatedFilter(CidadeFilter, name='cidade', queryset=Cidade.objects.all())
+
+    class Meta:
+        model = Bairro
+        fields = {'nome_bairro': ['icontains']}
+
+
+class RequerenteFilter(filters.FilterSet):
+    class Meta:
+        model = Requerente
+        fields = {'nome': ['icontains'],
+                  'cpf': ['exact']}
+
+
+class RespTecFilter(filters.FilterSet):
+    class Meta:
+        model = ResponsavelTecnico
+        fields = {'nome': ['icontains']}
+
+
+class AlvaraFilter(filters.FilterSet):
+    requerente = filters.RelatedFilter(RequerenteFilter, name='requerente', queryset=Requerente.objects.all())
+
+    class Meta:
+        model = AlvaraConstrucao
+        fields = {'numero': ['exact'],
+                  'ano': ['exact'],
+                  'num_processo': ['exact'],
+                  'end_obra': ['icontains']
+                  }
+
+
+class AutoFilter(filters.FilterSet):
+    requerente = filters.RelatedFilter(RequerenteFilter, name='requerente', queryset=Requerente.objects.all())
+
+    class Meta:
+        model = AutoRegularizacao
+        fields = {'numero': ['exact'],
+                  'ano': ['exact'],
+                  'num_processo': ['exact'],
+                  'end_obra': ['icontains']
+                  }
+
+
+class HabiteSeFilter(filters.FilterSet):
+    requerente = filters.RelatedFilter(RequerenteFilter, name='requerente', queryset=Requerente.objects.all())
+    alvara = filters.RelatedFilter(AlvaraFilter, name='alvara', queryset=AlvaraConstrucao.objects.all())
+    auto = filters.RelatedFilter(AutoFilter, name='auto', queryset=AutoRegularizacao.objects.all())
+
+    class Meta:
+        model = HabiteSe
+        fields = {'numero': ['exact'],
+                  'ano': ['exact'],
+                  'num_processo': ['exact'],
+                  'end_obra': ['icontains']
+                  }
+
+
+
+class UserFilter(filters.FilterSet):
+
+    class Meta:
+        model = User
+        fields = {'username':['icontains'],
+                  'email': ['icontains']}
+
+
+class AtendenteFilter(filters.FilterSet):
+    user = filters.RelatedFilter(UserFilter, name='user', queryset=User.objects.all())
+
+    class Meta:
+        model = Atendente
+        fields = {'matricula': ['exact']}
+
 # ---VIEWSETS --- #
 """
 Usar viewset no lugar das classes genericas do DRF trás uma grande facilidade
@@ -40,18 +137,21 @@ implementam as 'LISTS' e 'DETAILS' por padrão.
 class CidadeViewSet(viewsets.ModelViewSet):
     queryset = Cidade.objects.all()
     serializer_class = CidadeSerializer
+    filter_class = CidadeFilter
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
 
 class BairroViewSet(viewsets.ModelViewSet):
     queryset = Bairro.objects.all()
     serializer_class = BairroSerializer
+    filter_class = BairroFilter
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
 
 class RequerenteViewSet(viewsets.ModelViewSet):
     queryset = Requerente.objects.all()
     serializer_class = RequerenteSerializer
+    filter_class = RequerenteFilter
     permission_classes = (permissions.IsAuthenticated,)
 
 
@@ -64,24 +164,28 @@ class CargoViewSet(viewsets.ModelViewSet):
 class RespTecViewSet(viewsets.ModelViewSet):
     queryset = ResponsavelTecnico.objects.all()
     serializer_class = RespTecnicoSerializer
+    filter_class = RespTecFilter
     permission_classes = (permissions.IsAuthenticated,)
 
 
 class AlvaraViewSet(viewsets.ModelViewSet):
     queryset = AlvaraConstrucao.objects.all()
     serializer_class = AlvaraSerializer
+    filter_class = AlvaraFilter
     permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly,)
 
 
 class AutoViewSet(viewsets.ModelViewSet):
     queryset = AutoRegularizacao.objects.all()
     serializer_class = AutoSerializer
+    filter_class = AutoFilter
     permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly,)
 
 
 class HabiteSeViewSet(viewsets.ModelViewSet):
     queryset = HabiteSe.objects.all()
     serializer_class = HabiteSeSerializer
+    filter_class = HabiteSeFilter
     permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly,)
 
 
@@ -94,6 +198,7 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
 class AtendenteViewSet(viewsets.ModelViewSet):
     queryset = Atendente.objects.all()
     serializer_class = AtendenteSerializer
+    filter_class = AtendenteFilter
     permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly,)
 
 

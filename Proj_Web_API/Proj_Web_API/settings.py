@@ -38,9 +38,9 @@ DEFAULT_APPS = [
 ]
 
 EXTRA_APPS = [
-    'django_filters',
     'rest_framework',
     'rest_framework_swagger',
+    'django_filters',
 ]
 
 LOCAL_APPS = [
@@ -144,6 +144,14 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.BasicAuthentication',
         #    'rest_framework.authentication.SessionAuthentication',
+    ],
+
+    # Ativando os filtros
+    # Usando o restframework-filter para ativar os filtros
+    # doc.: https://github.com/philipn/django-rest-framework-filters
+    'DEFAULT_FILTER_BACKENDS': [
+        #'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework_filters.backends.DjangoFilterBackend',
     ],
 
 }

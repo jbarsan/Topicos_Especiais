@@ -31,7 +31,7 @@ class Bairro(models.Model):
 
 
 class Requerente(models.Model):
-    nome = models.CharField(max_length=150, verbose_name='Nome')
+    nome = models.CharField(max_length=150, verbose_name='Nome do requerente')
     cpf = models.CharField(max_length=14, verbose_name='C.P.F', unique=True)
     telefone = models.CharField(max_length=15, verbose_name='Telefone')
     endereco = models.CharField(max_length=150, verbose_name='Endereço')
