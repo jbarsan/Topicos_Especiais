@@ -1,47 +1,21 @@
 from .serializers import *
 from .permissions import *
-
-from rest_framework import permissions, viewsets
 from rest_framework.response import Response
-from rest_framework.reverse import reverse
-from rest_framework.decorators import api_view
-
+from rest_framework import permissions, viewsets, status
+from rest_framework.decorators import detail_route
 import rest_framework_filters as filters
 
+
 # Create your views here.
-# --- END POINT DA API --- #
-"""
-Usando o decorador @api_view pois aqui é uma função simples, que irá retornar uma lista 
-com todos os links disponíveis na api.
-"""
-
-
-@api_view(['GET'])
-def api_root(request):
-    return Response({
-        'requerentes': reverse('requerentes-list', request=request),
-        'cargos': reverse('cargo-list', request=request),
-        'resp. técnicos': reverse('responsaveltecnico-list', request=request),
-        'alvaras': reverse('alvaraconstrucao-list', request=request),
-        'autos': reverse('autoregularizacao-list', request=request),
-        'habite-ses': reverse('habitese-list', request=request),
-        'cidades': reverse('cidade-list', request=request),
-        'bairros': reverse('bairro-list', request=request),
-        'atendente': reverse('atendente-list', request=request),
-    })
-
-
 # --- FILTROS ---#
-"""
-Para filtrar os dados, estou usando o django-rest-framework-filters, que um é 
-uma extensão do Django REST framework e do Django-filter que facilita o filtro em todos os relacionamentos.
-Na variável 'fields', é possível especificar o tipo de argumento que será feita na consulta, como 'exacts', 'in',
-'startswith' e todas as outras opções dos field-lookups do Django. Esses argumentos precisam ser checados, pois podem
-ser diferentes de acordo com o banco de dados utilizado.
-Doc.: https://docs.djangoproject.com/pt-br/1.11/ref/models/querysets/#field-lookups
-Doc.: https://github.com/philipn/django-rest-framework-filters
-"""
 
+# Para filtrar os dados, estou usando o django-rest-framework-filters, que um é
+# uma extensão do Django REST framework e do Django-filter que facilita o filtro em todos os relacionamentos.
+# Na variável 'fields', é possível especificar o tipo de argumento que será feita na consulta, como 'exacts', 'in',
+# 'startswith' e todas as outras opções dos field-lookups do Django. Esses argumentos precisam ser checados, pois podem
+# ser diferentes de acordo com o banco de dados utilizado.
+# Doc.: https://docs.djangoproject.com/pt-br/1.11/ref/models/querysets/#field-lookups
+# Doc.: https://github.com/philipn/django-rest-framework-filters
 
 class CidadeFilter(filters.FilterSet):
     class Meta:
@@ -110,12 +84,10 @@ class HabiteSeFilter(filters.FilterSet):
                   }
 
 
-
 class UserFilter(filters.FilterSet):
-
     class Meta:
         model = User
-        fields = {'username':['icontains'],
+        fields = {'username': ['icontains'],
                   'email': ['icontains']}
 
 
@@ -126,15 +98,22 @@ class AtendenteFilter(filters.FilterSet):
         model = Atendente
         fields = {'matricula': ['exact']}
 
-# ---VIEWSETS --- #
-"""
-Usar viewset no lugar das classes genericas do DRF trás uma grande facilidade
-e redução na quantidade de códigos implementandos, já que as viewsets 
-implementam as 'LISTS' e 'DETAILS' por padrão.
-"""
 
+# ---VIEWSETS --- #
+# Usar viewset no lugar das classes genericas do DRF trás uma grande facilidade
+# e redução na quantidade de códigos implementandos, já que as viewsets
+# implementam as 'LISTS' e 'DETAILS' por padrão, sem contar que com isso eu ganho
+# os 'routers' e api_root automaticamente.
 
 class CidadeViewSet(viewsets.ModelViewSet):
+    """
+    list:       Retorna uma lista de todas as cidades cadastradas no sistema.
+    read:       Retorna uma cidade.
+    create:     Cria uma nova cidade no banco do sistema.
+    update:     Atualiza todos os campos.
+    partial_update: Atualizar somente os campos alterados.
+    delete:     Apaga uma cidade.
+    """
     queryset = Cidade.objects.all()
     serializer_class = CidadeSerializer
     filter_class = CidadeFilter
@@ -142,6 +121,14 @@ class CidadeViewSet(viewsets.ModelViewSet):
 
 
 class BairroViewSet(viewsets.ModelViewSet):
+    """
+    list:       Retorna uma lista de todas os bairros cadastrados no sistema.
+    read:       Retorna um bairro.
+    create:     Cria um novo bairro no banco do sistema.
+    update:     Atualiza todos os campos.
+    partial_update: Atualizar somente os campos alterados.
+    delete:     Apaga um bairro do banco.
+    """
     queryset = Bairro.objects.all()
     serializer_class = BairroSerializer
     filter_class = BairroFilter
@@ -149,6 +136,14 @@ class BairroViewSet(viewsets.ModelViewSet):
 
 
 class RequerenteViewSet(viewsets.ModelViewSet):
+    """
+    list:       Retorna uma lista com todos os requerentes cadastrados no sistema.
+    read:       Retorna um requerente.
+    create:     Cria um novo requerente no banco do sistema.
+    update:     Atualiza todos os campos.
+    partial_update: Atualizar somente os campos alterados.
+    delete:     Apaga um requerente do banco.
+    """
     queryset = Requerente.objects.all()
     serializer_class = RequerenteSerializer
     filter_class = RequerenteFilter
@@ -156,12 +151,28 @@ class RequerenteViewSet(viewsets.ModelViewSet):
 
 
 class CargoViewSet(viewsets.ModelViewSet):
+    """
+    list:       Retorna uma lista com todos os cargos cadastrados no sistema.
+    read:       Retorna um cargo.
+    create:     Cria um novo cargo no banco do sistema.
+    update:     Atualiza todos os campos.
+    partial_update: Atualizar somente os campos alterados.
+    delete:     Apaga um cargo do banco.
+    """
     queryset = Cargo.objects.all()
     serializer_class = CargoSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
 
 class RespTecViewSet(viewsets.ModelViewSet):
+    """
+    list:       Retorna uma lista com todos os responsáveis técnicos cadastrados no sistema.
+    read:       Retorna um responsável.
+    create:     Cria um novo responsável no banco do sistema.
+    update:     Atualiza todos os campos.
+    partial_update: Atualizar somente os campos alterados.
+    delete:     Apaga um responsável técnico do banco.
+    """
     queryset = ResponsavelTecnico.objects.all()
     serializer_class = RespTecnicoSerializer
     filter_class = RespTecFilter
@@ -169,6 +180,14 @@ class RespTecViewSet(viewsets.ModelViewSet):
 
 
 class AlvaraViewSet(viewsets.ModelViewSet):
+    """
+    list:       Retorna uma lista com todos os alvarás cadastrados no sistema.
+    read:       Retorna um alvará.
+    create:     Cria um novo alvará no banco do sistema.
+    update:     Atualiza todos os campos.
+    partial_update: Atualizar somente os campos alterados.
+    delete:     Apaga um alvará do banco.
+    """
     queryset = AlvaraConstrucao.objects.all()
     serializer_class = AlvaraSerializer
     filter_class = AlvaraFilter
@@ -176,6 +195,14 @@ class AlvaraViewSet(viewsets.ModelViewSet):
 
 
 class AutoViewSet(viewsets.ModelViewSet):
+    """
+    list:       Retorna uma lista com todos os autos cadastrados no sistema.
+    read:       Retorna um auto.
+    create:     Cria um novo auto no banco do sistema.
+    update:     Atualiza todos os campos.
+    partial_update: Atualizar somente os campos alterados.
+    delete:     Apaga um auto do banco.
+    """
     queryset = AutoRegularizacao.objects.all()
     serializer_class = AutoSerializer
     filter_class = AutoFilter
@@ -183,6 +210,14 @@ class AutoViewSet(viewsets.ModelViewSet):
 
 
 class HabiteSeViewSet(viewsets.ModelViewSet):
+    """
+    list:       Retorna uma lista com todos os habite-ses cadastrados no sistema.
+    read:       Retorna um habite-se.
+    create:     Cria um novo habite-se no banco do sistema.
+    update:     Atualiza todos os campos.
+    partial_update: Atualizar somente os campos alterados.
+    delete:     Apaga um cargo do banco.
+    """
     queryset = HabiteSe.objects.all()
     serializer_class = HabiteSeSerializer
     filter_class = HabiteSeFilter
@@ -190,12 +225,27 @@ class HabiteSeViewSet(viewsets.ModelViewSet):
 
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    list:       Retorna uma lista com todos os usuários cadastrados no sistema.
+    read:       Retorna um usuário.
+    create:     Cria um novo usuário no banco do sistema.
+    update:     Atualiza todos os campos.
+    partial_update: Atualizar somente os campos alterados.
+    delete:     Apaga um usuário do banco.
+    """
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly,)
 
-
 class AtendenteViewSet(viewsets.ModelViewSet):
+    """
+    list:       Retorna uma lista com todos os atendentes cadastrados no sistema.
+    read:       Retorna um atendente.
+    create:     Cria um novo atendente no banco do sistema.
+    update:     Atualiza todos os campos.
+    partial_update: Atualizar somente os campos alterados.
+    delete:     Apaga um atendente do banco.
+    """
     queryset = Atendente.objects.all()
     serializer_class = AtendenteSerializer
     filter_class = AtendenteFilter

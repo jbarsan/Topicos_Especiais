@@ -39,7 +39,8 @@ DEFAULT_APPS = [
 
 EXTRA_APPS = [
     'rest_framework',
-    'rest_framework_swagger',
+    # 'rest_framework.authtoken',
+    # 'rest_framework_swagger',
     'django_filters',
 ]
 
@@ -112,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'America/Fortaleza'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -124,10 +125,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-
-# Configurações do DRF
-# LOGIN_URL = 'rest_framework:login'
-# LOGOUT_URL = 'rest_framework:logout'
 
 REST_FRAMEWORK = {
     # Ativando a paginação
@@ -143,15 +140,27 @@ REST_FRAMEWORK = {
     # Ativando a autenticação
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.BasicAuthentication',
-        #    'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+       # 'rest_framework.authentication.TokenAuthentication',
     ],
 
     # Ativando os filtros
     # Usando o restframework-filter para ativar os filtros
     # doc.: https://github.com/philipn/django-rest-framework-filters
     'DEFAULT_FILTER_BACKENDS': [
-        #'django_filters.rest_framework.DjangoFilterBackend',
+        # 'django_filters.rest_framework.DjangoFilterBackend',
         'rest_framework_filters.backends.DjangoFilterBackend',
     ],
+
+    # Ativando o Throttle
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle',
+    ],
+
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '50/hour',
+        'user': '200/hour',
+    },
 
 }

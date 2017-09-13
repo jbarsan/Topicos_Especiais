@@ -12,7 +12,6 @@ class CidadeSerializer(serializers.HyperlinkedModelSerializer):
 
 # --- BAIRRO --- #
 class BairroSerializer(serializers.HyperlinkedModelSerializer):
-    # cidade = serializers.HyperlinkedRelatedField(queryset=Cidade.objects.all(), view_name='cidade-detail')
     cidade = CidadeSerializer()
 
     class Meta:
