@@ -34,11 +34,13 @@ class BairroFilter(filters.FilterSet):
         fields = {'nome_bairro': ['icontains']}
 
 
+
 class RequerenteFilter(filters.FilterSet):
     class Meta:
         model = Requerente
         fields = {'nome': ['icontains'],
                   'cpf': ['exact']}
+        
 
 
 class RespTecFilter(filters.FilterSet):
@@ -282,6 +284,7 @@ class AtendenteViewSet(viewsets.ModelViewSet):
 # dos urls na 'api-root'. Para isso é preciso transformar uma 'APIView' em uma 'ViewSet'.
 # Ref.1: http://marcgibbons.github.io/django-rest-swagger/schema/
 # Ref.2: https://stackoverflow.com/questions/30389248/how-can-i-register-a-single-view-not-a-viewset-on-my-router
+
 class SwaggerViewSet(viewsets.ViewSet):
     """
     list:   Retorna a documentação da Api
@@ -297,6 +300,7 @@ class SwaggerViewSet(viewsets.ViewSet):
         schema = generator.get_schema(request=request)
 
         return Response(schema)
+
 
 
 '''

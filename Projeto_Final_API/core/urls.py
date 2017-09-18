@@ -23,7 +23,7 @@ router.register(r'bairro', views.BairroViewSet)
 router.register(r'cargo', views.CargoViewSet)
 router.register(r'atendente', views.AtendenteViewSet)
 router.register(r'user', views.UserViewSet)
-router.register(r'documentacao', views.SwaggerViewSet, base_name='swagger')
+router.register(r'documentacao', views.SwaggerViewSet, base_name='docs')
 
 urlpatterns = [
     url(r'^', include(router.urls)),

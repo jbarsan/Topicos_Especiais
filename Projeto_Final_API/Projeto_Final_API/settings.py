@@ -42,6 +42,7 @@ EXTRA_APPS = [
     'rest_framework',
     'rest_framework_swagger',
     'django_filters',
+    'corsheaders',
 ]
 
 LOCAL_APPS = [
@@ -50,7 +51,7 @@ LOCAL_APPS = [
 
 INSTALLED_APPS = DEFAULT_APPS + EXTRA_APPS + LOCAL_APPS
 
-MIDDLEWARE = [
+DEFAULT_MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -59,6 +60,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+EXTRA_MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+]
+
+MIDDLEWARE = EXTRA_MIDDLEWARE + DEFAULT_MIDDLEWARE
 
 ROOT_URLCONF = 'Projeto_Final_API.urls'
 
@@ -193,11 +202,17 @@ JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=300),
     # 'JWT_AUDIENCE': None,
     # 'JWT_ISSUER': None,
-''
+    ''
     'JWT_ALLOW_REFRESH': False,
     'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7),
 
     'JWT_AUTH_HEADER_PREFIX': 'JWT',
     'JWT_AUTH_COOKIE': None,
-
 }
+
+# Configuração do CORS MIDDLEWARE
+CORS_ORIGIN_ALLOW_ALL = False
+
+CORS_ORIGIN_WHITELIST = (
+    'localhost:8000',
+)
