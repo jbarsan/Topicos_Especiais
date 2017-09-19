@@ -1,6 +1,11 @@
+# --- DJANGO ---#
 from django.conf.urls import url, include
+# ---LOCAL---#
 from . import views
+# ---DRF---#
 from rest_framework.routers import DefaultRouter
+from rest_framework.authtoken.views import obtain_auth_token
+
 
 # Definindo rotas automaticamente com o DefaultRouter do DRF.
 # Isto é possível porque estou usando viewsets nas views.
@@ -27,5 +32,6 @@ router.register(r'documentacao', views.SwaggerViewSet, base_name='docs')
 
 urlpatterns = [
     url(r'^', include(router.urls)),
+    url(r'^api-token-auth/', obtain_auth_token),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
-

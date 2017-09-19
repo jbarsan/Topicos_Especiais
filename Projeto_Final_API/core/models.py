@@ -1,9 +1,23 @@
+# ---Django---#
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+from django.conf import settings
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
+# ---DRF---#
+from rest_framework.authtoken.models import Token
+# ---EXTRAS---#
 from localflavor.br.br_states import STATE_CHOICES
+
+
+# Criando geradores de token
+@receiver(post_save, sender=settings.AUTH_USER_MODEL)
+def create_auth_token(sender, instance=None, created=False, **kwargs):
+    if created:
+        Token.objects.create(user=instance)
 
 
 # Criando funções validadoras para os campos numericos do documento
