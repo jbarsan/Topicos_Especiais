@@ -1,0 +1,115 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/materialize.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/google-font.css" rel="stylesheet">
+    <link href="css/materialize-social.css" rel="stylesheet">
+    <link href="css/project-style.css" rel="stylesheet">
+    <title>Login</title>
+    <script src="js/vue.min.js"></script>
+    <script src="js/axios.min.js"></script>
+</head>
+
+<body>
+<div class="section"></div>
+<main>
+    <div id="login">
+        <div class="row center">
+            <h5 class="red-text">Por favor faça login</h5>
+            <div class="section"></div>
+
+            <div class="container">
+                <div class="z-depth-1 grey lighten-4 row"
+                     style="display: inline-block; padding: 32px 48px 0 48px; border: 1px solid #EEE;">
+
+                    <!--<form class="col s12" method="post">-->
+                    <div class='row'>
+                        <div class='col s12'>
+                            <div v-if="errors">
+                                <p class="center red-text">{{ errors.response.statusText }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class='input-field col s12'>
+                            <i class="material-icons left prefix">person</i>
+                            <input type='text'
+                                   id="username"
+                                   v-model="username"
+                            >
+                            <label for='username'>Username</label>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class='input-field col s12'>
+                            <i class="material-icons left prefix">lock</i>
+                            <input class='validate'
+                                   type='password'
+                                   id='password'
+                                   v-model="password"
+                            >
+                            <label for='password'>Senha</label>
+                        </div>
+                    </div>
+
+                    <br/>
+                    <div class="row center">
+                        <div class='row'>
+                            <button class='col s12 btn btn-large waves-effect red' @click="submit()">
+                                Login
+                            </button>
+                        </div>
+                    </div>
+                    <!--</form>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/materialize.min.js"></script>
+<script type="text/javascript">
+    const ENDPOINT = 'http://localhost:8000/api-token-auth/';
+    let app = new Vue({
+        el: '#login',
+        data: {
+            errors: '',
+            username: '',
+            password: '',
+        },
+        mounted() {
+            console.log(localStorage.getItem('token'));
+            if (localStorage.getItem('token') !== 'null') {
+                window.location = 'index.html'
+            }
+        },
+        methods: {
+            submit: function () {
+                credentials = {
+                    username: app.username,
+                    password: app.password,
+                };
+                console.log('pega o token');
+                axios.post(ENDPOINT, credentials)
+                    .then(function (response) {
+                        localStorage.setItem('token', response.data.token);
+                        localStorage.setItem('username', app.username);
+                        location.reload();
+                    })
+                    .catch(e => {
+                        console.log(e);
+                        app.errors = e;
+                    })
+            },
+        }
+    })
+</script>
+
+</body>
+</html>

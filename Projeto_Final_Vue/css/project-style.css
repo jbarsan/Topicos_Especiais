@@ -1,0 +1,59 @@
+#header-logo {
+    font-size: 18px;
+}
+
+.mini-perfil {
+    width: 37px;
+    margin-top: 12px;
+    margin-right: 20px;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+#fh6 {
+    margin-top: 16px;
+}
+
+.sem-espaco-linha {
+    margin-bottom: 0 !important;
+}
+
+.card-index {
+    /*width: 140px;
+    height: 150px;
+    */
+    width: 10em;
+    height: 11em;
+}
+
+.texto-card {
+    font-size: 12px;
+}
+
+.card-imagem-fundo {
+    width: 100%;
+}
+
+.add-btn-flt {
+    position: relative;
+    float: right;
+    top: -18px;
+    right: 10%;
+}
+
+.btn-tm {
+    width: 65px !important;
+}
+
+.modal {
+    width: 75% !important;
+    max-height: 100% !important;
+}

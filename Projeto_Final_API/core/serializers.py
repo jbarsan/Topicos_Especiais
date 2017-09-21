@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class CidadeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Cidade
-        fields = ('url', 'nome_cidade', 'estado')
+        fields = ('url', 'id', 'nome_cidade', 'estado')
 
 
 # --- BAIRRO --- #
@@ -17,7 +17,7 @@ class BairroSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Bairro
-        fields = ('url', 'nome_bairro', 'cidade')
+        fields = ('url', 'id', 'nome_bairro', 'cidade')
 
 
 # --- REQUERENTE --- #
@@ -26,7 +26,7 @@ class RequerenteSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Requerente
-        fields = ('url', 'nome', 'cpf', 'telefone', 'endereco',
+        fields = ('url', 'id', 'nome', 'cpf', 'telefone', 'endereco',
                   'num_residencia', 'complemento', 'bairro', 'cep', 'data_cadastro')
 
 
@@ -34,7 +34,7 @@ class RequerenteSerializer(serializers.HyperlinkedModelSerializer):
 class CargoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Cargo
-        fields = ('url', 'descricao')
+        fields = ('url', 'id', 'descricao')
 
 
 # --- RESPONSÁVEL TÉCNICO --- #
@@ -45,7 +45,7 @@ class RespTecnicoSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = ResponsavelTecnico
-        fields = ('url', 'nome', 'cargo')
+        fields = ('url', 'id', 'nome', 'cargo')
 
 
 # --- ALVARÁ DE CONSTRUÇÃO --- #

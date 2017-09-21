@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/materialize.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/google-font.css" rel="stylesheet">
+    <link href="css/materialize-social.css" rel="stylesheet">
+    <link href="css/project-style.css" rel="stylesheet">
+    <script src="js/vue.min.js"></script>
+    <script src="js/axios.min.js"></script>
+    <title>Projeto AHA - Documentos</title>
+</head>
+<body>
+<header class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper red" id="app_nav">
+            <ul>
+                <li>
+                    <a href="#" id="btn-sidebar">
+                        <i class="material-icons">menu</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html" id="header-logo">
+                        Projeto AHA
+                    </a>
+                </li>
+            </ul>
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <a href="#" id="btn-dropdown-perfil" data-activates='dropdown-perfil'>
+                        <img class="circle left mini-perfil" src="img/perfil.png" alt="">
+                        <span>Bem Vindo</span>
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                    <ul id='dropdown-perfil' class='dropdown-content'>
+                        <li><a href="#" @click="logout()">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div> <!-- Fim do nav-wrapper -->
+    </nav> <!-- Fim do navbar -->
+</header> <!-- Fim do header -->
+
+
+<main>
+    <div class="container">
+        <br>
+        <div class="">
+            <h4 class="amber-text">
+                <i class="material-icons prefix">dashboard</i>
+                Documentos
+            </h4>
+        </div>
+
+        <!----------------------------------- Documentos ----------------------------------->
+        <div class="row section sem-espaco-linha">
+            <div class="col l4 m12 s12">
+                <div class="card sticky-action">
+                    <div class="card-image card-imagem-fundo waves-effect waves-light">
+                        <img src="img/auto.jpg" class="activator" alt="Logotipo do Auto de Regularização">
+                    </div>
+                    <div class="card-content center">
+                        <span class="card-title red-text activator">Auto de Regularização</span>
+                        <div class="card-action row valign-wrapper">
+                            <a class="btn small red col s4 btn-tm modal-trigger" href="#modal-auto-add"><i
+                                    class="material-icons">add</i></a>
+                            <a class="btn small amber col s4 btn-tm modal-trigger" href="#modal-auto-search"><i
+                                    class="material-icons">search</i></a>
+                            <a class="btn small green col s4 btn-tm modal-trigger" href="#modal-auto-list"><i
+                                    class="material-icons">list</i></a>
+                        </div>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title"><i class="material-icons right">close</i></span>
+
+                        <p>Descrição do que é um Auto de Regularização aqui.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col l4 m12 s12">
+                <div class="card sticky-action">
+                    <div class="card-image card-imagem-fundo waves-effect waves-light">
+                        <img src="img/construcao.jpg" class="activator" alt="Logotipo do Alvará de Construção">
+                    </div>
+                    <div class="card-content center">
+                        <span class="card-title red-text activator">Alvará de Construção</span>
+                        <div class="card-action row valign-wrapper">
+                            <a class="btn small red col s4 btn-tm modal-trigger" href="#modal-alvara-add"><i
+                                    class="material-icons">add</i></a>
+                            <a class="btn small amber col s4 btn-tm modal-trigger" href="#modal-alvara-search"><i
+                                    class="material-icons">search</i></a>
+                            <a class="btn small green col s4 btn-tm modal-trigger" href="#modal-alvara-list"><i
+                                    class="material-icons">list</i></a>
+                        </div>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title"><i class="material-icons right">close</i></span>
+
+                        <p>Descrição do que é um alvará aqui.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col l4 m12 s12">
+                <div class="card sticky-action">
+                    <div class="card-image card-imagem-fundo waves-effect waves-light">
+                        <img src="img/habitese.jpg" class="activator" alt="Logotipo do Habite-se">
+                    </div>
+                    <div class="card-content center">
+                        <span class="card-title red-text activator">Habite-se</span>
+                        <div class="card-action row valign-wrapper">
+                            <a class="btn small red col s4 btn-tm modal-trigger" href="#modal-habitese-add"><i
+                                    class="material-icons">add</i></a>
+                            <a class="btn small amber col s4 btn-tm modal-trigger" href="#modal-habitese-search"><i
+                                    class="material-icons">search</i></a>
+                            <a class="btn small green col s4 btn-tm modal-trigger" href="#modal-habitese-list"><i
+                                    class="material-icons">list</i></a>
+                        </div>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title"><i class="material-icons right">close</i></span>
+
+                        <p>Descrição do que é um habite-se aqui.</p>
+                    </div>
+                </div>  <!-- fim do card -->
+            </div>
+        </div> <!-- Fim do row -->
+
+
+    </div> <!-- Fim do id=app-docs -->
+</main>
+
+
+<footer class="page-footer  red lighten-5 center">
+    <div class="container">
+        <div class="row">
+
+            <div class="col s12">
+                <a href="https://github.com/jbarsan"
+                   class="waves-effect waves-light social-icon btn-floating github">
+                    <i class="fa fa-github"></i>
+                </a>
+                <a href="https://bitbucket.org/jbarsan/"
+                   class="waves-effect waves-light social-icon btn-floating bitbucket">
+                    <i class="fa fa-bitbucket"></i>
+                </a>
+                <a href="https://www.facebook.com/jbarsan"
+                   class="waves-effect waves-light social-icon btn-floating facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a href="https://www.twitter.com/joao_barsan"
+                   class="waves-effect waves-light social-icon btn-floating twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            <h6 class="center black-text" id="fh6">© 2017 Barsan Corp - Todos os direitos reservados</h6>
+        </div>
+    </div>
+
+</footer> <!-- fim do rodapé -->
+<div id="app_docs">
+    <!----------------------------------- Modais ----------------------------------->
+    <!----------------------------------- Auto   ----------------------------------->
+    <div id="modal-auto-add" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4 class="red-text center">Cadastrar Auto de Regularização</h4>
+            <div class="row">
+                <form>
+                    <fieldset>
+                        <legend>Número, Ano e Processo</legend>
+                        <div class="row col s12">
+                            <div class="input-field col s3">
+                                <input class="validate num-doc" type="number" id="num-auto" min="1"
+                                       v-model="auto.numero">
+                                <label for="num-auto">Número</label>
+                            </div>
+                            <div class="input-field col s3">
+                                <input class="validate ano-doc" type="number" id="ano-auto" min="2013"
+                                       v-model="auto.ano">
+                                <label for="ano-auto">Ano</label>
+                            </div>
+                            <div class="input-field col s3">
+                                <input class="validate process-num" type="text" id="processo-auto"
+                                       placeholder="Ex.: 10.0123/2017" v-model="auto.num_processo">
+                                <label for="processo-auto">Processo</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Requerente</legend>
+                        <div class="row col s12">
+                            <div class="input-field col s5">
+                                <select id="req-auto" v-model="selectedRequerente">
+                                    <option value="" disabled>----------</option>
+                                    <option v-for="req in requerentes">
+                                        {{ req.nome }}
+                                    </option>
+                                </select>
+                                <label for="req-auto">Requerente</label>
+                            </div>
+                            <div class="input-field valign-wrapper col s1 left-align">
+                                <a href="#" class="btn-flat waves-effect btn-small"><i
+                                        class="material-icons red-text">add</i></a>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Informações do Documento</legend>
+                        <div class="row col s12">
+                            <div class="input-field col s7">
+                                <input type="text" data-length="150" id="end-obra-auto" maxlength="150"
+                                       v-model="auto.end_obra">
+                                <label for="end-obra-auto">Endereço da Obra</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <input type="text" id="num-end-obra-auto" v-model="auto.num_residencia">
+                                <label for="num-end-obra-auto">Número</label>
+                            </div>
+                            <div class="input-field col s3">
+                                <select id="bairro-auto" v-model="selectedBairro">
+                                    <option value="" disabled>----------</option>
+                                    <option v-for="bairro in bairros" :value="bairro">
+                                        {{ bairro.nome_bairro }}
+                                    </option>
+                                </select>
+                                <label for="bairro-auto">Bairro</label>
+                            </div>
+                        </div>
+                        <div class="row col s12">
+                            <div class="input-field col s5">
+                                <input type="text" data-length="150" id="comp-end-obra-auto" maxlength="150"
+                                       v-model="auto.cep">
+                                <label for="comp-end-obra-auto">Complemento</label>
+                            </div>
+                            <div class="input-field col s3">
+                                <input class="validate cep" type="text" data-length="9" id="cep-end-obra-auto"
+                                       maxlength="9" v-model="auto.cep">
+                                <label for="cep-end-obra-auto">C.E.P</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <input class="validate" type="number" id="area-terreno" min="0" step="0.01"
+                                       v-model="auto.area_terreno">
+                                <label for="area-terreno">Área do Terreno</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <input class="validate" type="number" id="area-constr" min="0" step="0.01"
+                                       v-model="auto.area_construida">
+                                <label for="area-constr">Área Construída</label>
+                            </div>
+                        </div>
+                        <div class="row col s12">
+                            <div class="input-field col s3">
+                                <select id="rt-auto" v-model="selectedRespTecnico">
+                                    <option value="" disabled>---------------</option>
+                                    <option v-for="rp in resp_tecnicos" :value="rp">
+                                        {{ rp.nome }}
+                                    </option>
+                                </select>
+                                <label for="rt-auto">Resp. Técnico</label>
+                            </div>
+                            <div class="input-field valign-wrapper col s1 left-align">
+                                <a href="#" class="btn-flat waves-effect btn-small"><i
+                                        class="material-icons red-text">add</i></a>
+                            </div>
+                            <div class="input-field col s3">
+                                <input type="date" id="date-auto" v-model="auto.data_documento">
+                                <label for="date-auto"></label>
+                            </div>
+                            <div class="input-field col s5">
+                                    <textarea class="materialize-textarea" id="obs-auto"
+                                              v-model="auto.observacao"></textarea>
+                                <label for="obs-auto">Observações</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn modal-action modal-close waves-effect waves-green btn green">Cancelar</button>
+            <button @click.prevent="criaAuto" class="btn modal-action waves-effect waves-green red">Salvar</button>
+        </div>
+    </div>
+
+    <div id="modal-auto-search" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4 class="red-text center">Buscar Auto de Regularização</h4>
+            <div class="row col s12">
+                <form>
+                    <div class="input-field col s5">
+                        <input type="text" id="search-auto">
+                        <label for="search-auto">Pesquisar</label>
+                    </div>
+                </form>
+                <div class="row col s12">
+                    <p>Implementar a exibição da busca aqui</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn green">Cancelar</a>
+            <a href="#" class="modal-action waves-effect waves-green btn red">Buscar</a>
+        </div>
+    </div>
+
+    <div id="modal-auto-list" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4 class="red-text center">Listar Auto de Regularização</h4>
+            <div class="row">
+                <ul class="collection">
+                    <li class="collection-item">
+                        <p>Implementar a listagem aqui</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn green">Cancelar</a>
+        </div>
+    </div>
+
+    <!----------------------------------- Alvará   ----------------------------------->
+    <div id="modal-alvara-add" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4 class="red-text center">Cadastrar Alvará de Construção</h4>
+            <div class="row">
+                <form action="#" method="post">
+                    {% csrf_token %}
+                    <fieldset>
+                        <legend>Número, Ano e Processo</legend>
+                        <div class="row col s12">
+                            <div class="input-field col s3">
+                                <input class="validate num-doc" type="number" id="num-alv" min="1">
+                                <label for="num-alv">Número</label>
+                            </div>
+                            <div class="input-field col s3">
+                                <input class="validate ano-doc" type="number" id="ano-alv" min="2013">
+                                <label for="ano-alv">Ano</label>
+                            </div>
+                            <div class="input-field col s3">
+                                <input class="validate process-num" type="text" id="processo-alv"
+                                       placeholder="Ex.: 10.0123/2017">
+                                <label for="processo-alv">Processo</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Requerente</legend>
+                        <div class="row col s12">
+                            <div class="input-field col s5">
+                                <select id="req-alv">
+                                    <option value="xxx">XXX</option>
+                                </select>
+                                <label for="req-alv">Requerente</label>
+                            </div>
+                            <div class="input-field valign-wrapper col s1 left-align">
+                                <a href="#" class="btn-flat waves-effect btn-small"><i
+                                        class="material-icons red-text">add</i></a>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Informações do Documento</legend>
+                        <div class="row col s12">
+                            <div class="input-field col s7">
+                                <input type="text" data-length="150" id="end-obra-alv" maxlength="150">
+                                <label for="end-obra-alv">Endereço da Obra</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <input type="text" id="num-end-obra-alv">
+                                <label for="num-end-obra-alv">Número</label>
+                            </div>
+                            <div class="input-field col s3">
+                                <select id="bairro-alv">
+                                    <option value="yyy">YYY</option>
+                                </select>
+                                <label for="bairro-alv">Bairro</label>
+                            </div>
+                        </div>
+                        <div class="row col s12">
+                            <div class="input-field col s5">
+                                <input type="text" data-length="150" id="comp-end-obra-alv" maxlength="150">
+                                <label for="comp-end-obra-alv">Complemento</label>
+                            </div>
+                            <div class="input-field col s3">
+                                <input class="validate cep" type="text" data-length="9" id="cep-end-obra-alv"
+                                       maxlength="9">
+                                <label for="cep-end-obra-alv">C.E.P</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <input class="validate" type="number" id="area-terreno-alv" min="0" step="0.01">
+                                <label for="area-terreno-alv">Área do Terreno</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <input class="validate" type="number" id="area-constr-alv" min="0" step="0.01">
+                                <label for="area-constr-alv">Área Construída</label>
+                            </div>
+                        </div>
+                        <div class="row col s12">
+                            <div class="input-field col s3">
+                                <select id="rt-alv">
+                                    <option value="zzz">ZZZ</option>
+                                </select>
+                                <label for="rt-alv">Resp. Técnico</label>
+                            </div>
+                            <div class="input-field valign-wrapper col s1 left-align">
+                                <a href="#" class="btn-flat waves-effect btn-small"><i
+                                        class="material-icons red-text">add</i></a>
+                            </div>
+                            <div class="input-field col s3">
+                                <input type="date" id="date-alv">
+                                <label for="date-alv"></label>
+                            </div>
+                            <div class="input-field col s5">
+                                <textarea class="materialize-textarea" id="obs-alv"></textarea>
+                                <label for="obs-alv">Observações</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn green">Cancelar</a>
+            <a href="#" class="modal-action waves-effect waves-green btn red">Salvar</a>
+        </div>
+    </div>
+
+    <div id="modal-alvara-search" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4 class="red-text center">Buscar Alvará de Construção</h4>
+            <div class="row col s12">
+                <form>
+                    <div class="input-field col s5">
+                        <input type="text" id="search-alv">
+                        <label for="search-alv">Pesquisar</label>
+                    </div>
+                </form>
+                <div class="row col s12">
+                    <p>Implementar a exibição da busca aqui</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn green">Cancelar</a>
+            <a href="#" class="modal-action waves-effect waves-green btn red">Buscar</a>
+        </div>
+    </div>
+
+    <div id="modal-alvara-list" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4 class="red-text center">Listar Alvará de Construção</h4>
+            <div class="row">
+                <ul class="collection">
+                    <li class="collection-item">
+                        <p>Implementar a listagem aqui</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn green">Cancelar</a>
+        </div>
+    </div>
+
+    <!----------------------------------- Habite-se   ----------------------------------->
+    <div id="modal-habitese-add" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4 class="red-text center">Cadastrar Habite-se</h4>
+            <div class="row">
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend>Número, Ano e Processo</legend>
+                        <div class="row col s12">
+                            <div class="input-field col s3">
+                                <input class="validate num-doc" type="number" id="num-hab" min="1">
+                                <label for="num-hab">Número</label>
+                            </div>
+                            <div class="input-field col s3">
+                                <input class="validate ano-doc" type="number" id="ano-hab" min="2013">
+                                <label for="ano-hab">Ano</label>
+                            </div>
+                            <div class="input-field col s3">
+                                <input class="validate process-num" type="text" id="processo-hab"
+                                       placeholder="Ex.: 10.0123/2017">
+                                <label for="processo-hab">Processo</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Requerente</legend>
+                        <div class="row col s12">
+                            <div class="input-field col s5">
+                                <select id="req-hab">
+                                    <option value="xxx">XXX</option>
+                                </select>
+                                <label for="req-hab">Requerente</label>
+                            </div>
+                            <div class="input-field valign-wrapper col s1 left-align">
+                                <a href="#" class="btn-flat waves-effect btn-small"><i
+                                        class="material-icons red-text">add</i></a>
+                            </div>
+                            <div class="input-field col s3">
+                                <select id="auto-hab">
+                                    <option value="AAA">AAA</option>
+                                </select>
+                                <label for="auto-hab">Auto de Regularização</label>
+                            </div>
+                            <div class="input-field col s3">
+                                <select id="auto-alv">
+                                    <option value="BBB">BBB</option>
+                                </select>
+                                <label for="auto-alv">Alvará de Construção</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Informações do Documento</legend>
+                        <div class="row col s12">
+                            <div class="input-field col s7">
+                                <input type="text" data-length="150" id="end-obra-hab" maxlength="150">
+                                <label for="end-obra-hab">Endereço da Obra</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <input type="text" id="num-end-obra-hab">
+                                <label for="num-end-obra-hab">Número</label>
+                            </div>
+                            <div class="input-field col s3">
+                                <select id="bairro-hab">
+                                    <option value="yyy">YYY</option>
+                                </select>
+                                <label for="bairro-hab">Bairro</label>
+                            </div>
+                        </div>
+                        <div class="row col s12">
+                            <div class="input-field col s5">
+                                <input type="text" data-length="150" id="comp-end-obra-hab" maxlength="150">
+                                <label for="comp-end-obra-hab">Complemento</label>
+                            </div>
+                            <div class="input-field col s3">
+                                <input class="validate cep" type="text" data-length="9" id="cep-end-obra-hab"
+                                       maxlength="9">
+                                <label for="cep-end-obra-hab">C.E.P</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <input class="validate" type="number" id="area-terreno-hab" min="0" step="0.01">
+                                <label for="area-terreno-hab">Área do Terreno</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <input class="validate" type="number" id="area-constr-hab" min="0" step="0.01">
+                                <label for="area-constr-hab">Área Construída</label>
+                            </div>
+                        </div>
+                        <div class="row col s12">
+                            <div class="input-field col s3">
+                                <select id="rt-hab">
+                                    <option value="zzz">ZZZ</option>
+                                </select>
+                                <label for="rt-hab">Resp. Técnico</label>
+                            </div>
+                            <div class="input-field valign-wrapper col s1 left-align">
+                                <a href="#" class="btn-flat waves-effect btn-small"><i
+                                        class="material-icons red-text">add</i></a>
+                            </div>
+                            <div class="input-field col s3">
+                                <input type="date" id="date-hab">
+                                <label for="date-hab"></label>
+                            </div>
+                            <div class="input-field col s5">
+                                <textarea class="materialize-textarea" id="obs-hab"></textarea>
+                                <label for="obs-hab">Observações</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn green">Cancelar</a>
+            <a href="#" class="modal-action waves-effect waves-green btn red">Salvar</a>
+        </div>
+    </div>
+
+    <div id="modal-habitese-search" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4 class="red-text center">Buscar Habite-se</h4>
+            <div class="row col s12">
+                <form>
+                    <div class="input-field col s5">
+                        <input type="text" id="search-hab">
+                        <label for="search-hab">Pesquisar</label>
+                    </div>
+                </form>
+                <div class="row col s12">
+                    <p>Implementar a exibição da busca aqui</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn green">Cancelar</a>
+            <a href="#" class="modal-action waves-effect waves-green btn red">Buscar</a>
+        </div>
+    </div>
+
+    <div id="modal-habitese-list" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4 class="red-text center">Listar Habite-se</h4>
+            <div class="row">
+                <ul class="collection">
+                    <li class="collection-item">
+                        <p>Implementar a listagem aqui</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn green">Cancelar</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/materialize.min.js"></script>
+<script src="js/jquery.mask.min.js"></script>
+<script src="js/project-script.js"></script>
+<script type="text/javascript">
+    let token = localStorage.getItem('token');
+    let config = {'Authorization': 'Token ' + token};
+    let app_nav = new Vue({
+        el: '#app_nav',
+        data: {},
+        methods: {
+            logout: function () {
+                localStorage.setItem('token', null);
+                location.reload();
+                window.location = 'login.html';
+            },
+        }
+    });
+
+    let app_docs = new Vue({
+        el: '#app_docs',
+        data: {
+            selectedBairro: '',
+            selectedRequerente: '',
+            selectedRespTecnico: '',
+            requerentes: [],
+            bairros: [],
+            resp_tecnicos: [],
+            autos: [],
+
+            auto: {
+                numero: '',
+                ano: '',
+                num_processo: '',
+                requerente: '',
+                end_obra: '',
+                num_residencia: '',
+                complemento: '',
+                bairro: '',
+                cep: '',
+                area_terreno: '',
+                area_construida: '',
+                observacao: '',
+                data_documento: '',
+                resp_tecnico: '',
+            },
+            pagination: {
+                count: 0,
+                next: '',
+                previous: '',
+            },
+            response: '',
+            errors: '',
+        },
+        mounted() {
+            this.pegaRequerente('http://localhost:8000/requerente');
+            this.pegaBairros('http://localhost:8000/bairro');
+            this.pegaRP('http://localhost:8000/resp_tecnico')
+        },
+        methods: {
+            /*criaAuto: function () {
+                axios.post('http://localhost:8000/auto/', app_docs.auto)
+                    .then(function (response) {
+                        app_docs.response = response;
+                    })
+                    .catch(e => {
+                        app_docs.errors = e;
+                    });*/
+
+            pegaRequerente: function (url) {
+                axios.get(url, {headers: config})
+                    .then(function (response) {
+                        app_docs.requerentes = response.data.results;
+                        console.log(app_docs.requerentes)
+                    })
+            },
+            pegaBairros: function (url) {
+                axios.get(url, {headers: config})
+                    .then(function (response) {
+                        app_docs.bairros = response.data.results;
+                    })
+            },
+            pegaRP: function (url) {
+                axios.get(url, {headers: config})
+                    .then(function (response) {
+                        app_docs.resp_tecnicos = response.data.results;
+                    })
+            },
+        },
+    });
+</script>
+</body>
+</html>

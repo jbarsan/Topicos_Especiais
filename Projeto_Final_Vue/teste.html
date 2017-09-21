@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/materialize.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/google-font.css" rel="stylesheet">
+    <link href="css/materialize-social.css" rel="stylesheet">
+    <link href="css/project-style.css" rel="stylesheet">
+    <script src="js/vue.min.js"></script>
+    <script src="js/axios.min.js"></script>
+    <title>TESTES</title>
+</head>
+<body>
+
+<div class="container">
+
+    <br>
+    <div class="">
+        <h4 class="amber-text">
+            <i class="material-icons prefix">dashboard</i>
+            Documentos
+        </h4>
+    </div>
+
+    <!----------------------------------- Documentos ----------------------------------->
+
+
+    <div id="app_docs">
+        <div class="col s12">
+
+            <select v-model="selectedBairro">
+                <option value="">----------</option>
+                <option v-for="option in bairros" :value="option">
+                    {{ option.nome_bairro }}
+                </option>
+            </select>
+
+        </div>
+        <hr>
+        <br>
+        <div v-show="selectedBairro">
+            <span>Nome Bairro: {{selectedBairro.nome_bairro}}</span>
+            <span>ID: {{selectedBairro.id}}</span>
+        </div>
+
+
+
+        <pre>
+            {{$data}}
+        </pre>
+
+
+    </div>
+
+
+</div>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/materialize.min.js"></script>
+<script src="js/jquery.mask.min.js"></script>
+<script src="js/project-script.js"></script>
+<script type="text/javascript">
+    let app_docs = new Vue({
+        el: '#app_docs',
+        data: {
+            selectedBairro: '',
+            bairros: [],
+            response: '',
+            errors: '',
+        },
+        mounted() {
+            this.pegaBairros('http://localhost:8000/bairro/');
+            //this.pegaCargos('http://localhost:8000/cargo/');
+            //this.pegaAutos('http://localhost:8000/auto');
+
+        },
+        methods: {
+            pegaBairros: function (url) {
+                axios.get(url)
+                    .then(function (response) {
+                        app_docs.bairros = response.data.results;
+                    })
+            },
+            pegaCargos: function (url) {
+                axios.get(url)
+                    .then(function (response) {
+                        app_docs.cargos = response.data.results;
+                    });
+            },
+
+        },
+    });
+</script>
+</body>
+</html>

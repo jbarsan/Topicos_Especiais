@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/materialize.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/google-font.css" rel="stylesheet">
+    <link href="css/materialize-social.css" rel="stylesheet">
+    <link href="css/project-style.css" rel="stylesheet">
+    <script src="js/vue.min.js"></script>
+    <script src="js/axios.min.js"></script>
+    <title>Project SDU</title>
+</head>
+<body>
+<header class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper red" id="app_nav">
+            <ul>
+                <li>
+                    <a href="#" id="btn-sidebar">
+                        <i class="material-icons">menu</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html" id="header-logo">
+                        Projeto AHA
+                    </a>
+                </li>
+            </ul>
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <a href="#" id="btn-dropdown-perfil" data-activates='dropdown-perfil'>
+                        <img class="circle left mini-perfil" src="img/perfil.png" alt="">
+                        <span>Bem Vindo</span>
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                    <ul id='dropdown-perfil' class='dropdown-content'>
+                        <li><a href="#" @click="logout()">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div> <!-- Fim do nav-wrapper -->
+    </nav> <!-- Fim do navbar -->
+</header> <!-- Fim do header -->
+
+
+<main>
+    <div id="app-index" class="container">
+        <br>
+        <div class="">
+            <h4 class="amber-text">
+                <i class="material-icons prefix">dashboard</i>
+                Serviços
+            </h4>
+        </div>
+
+        <div class="col s12 row valign-wrapper">
+            <div class="row section sem-espaco-linha">
+                <div class="col s4">
+                    <div class="card waves-effect grey lighten-4 card-index">
+                        <div class="card-content center">
+                            <a href="#">
+                                <i class="material-icons medium amber-text">people</i>
+                                <p>Atendente</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s4">
+                    <div class="card waves-effect grey lighten-4 card-index">
+                        <div class="card-content center">
+                            <a href="documentos.html">
+                                <i class="material-icons medium amber-text">description</i>
+                                <p>Documentos</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s4">
+                    <div class="card waves-effect grey lighten-4 card-index">
+                        <div class="card-content center">
+                            <a href="#">
+                                <i class="material-icons medium amber-text">settings</i>
+                                <p>Configurações</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div> <!-- Fim do id=app-docs -->
+</main>
+
+
+<footer class="page-footer  red lighten-5 center">
+    <div class="container">
+        <div class="row">
+
+            <div class="col s12">
+                <a href="https://github.com/jbarsan"
+                   class="waves-effect waves-light social-icon btn-floating github">
+                    <i class="fa fa-github"></i>
+                </a>
+                <a href="https://bitbucket.org/jbarsan/"
+                   class="waves-effect waves-light social-icon btn-floating bitbucket">
+                    <i class="fa fa-bitbucket"></i>
+                </a>
+                <a href="https://www.facebook.com/jbarsan"
+                   class="waves-effect waves-light social-icon btn-floating facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a href="https://www.twitter.com/joao_barsan"
+                   class="waves-effect waves-light social-icon btn-floating twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            <h6 class="center black-text" id="fh6">© 2017 Barsan Corp - Todos os direitos reservados</h6>
+        </div>
+    </div>
+
+</footer> <!-- fim do rodapé -->
+
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/materialize.min.js"></script>
+<script src="js/project-script.js"></script>
+<script type="text/javascript">
+    let token = localStorage.getItem('token');
+    let config = {'Authorization': 'Token ' + token};
+    const ENDPOINT_INDEX = 'http://localhost:8000/';
+    let app = new Vue({
+        el: '#app_nav',
+        data: {},
+        methods: {
+            logout: function () {
+                localStorage.setItem('token', null);
+                location.reload();
+                window.location = 'login.html';
+            },
+        }
+    });
+</script>
+</body>
+</html>
