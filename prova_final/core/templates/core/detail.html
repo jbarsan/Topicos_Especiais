@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+
+{% block conteudo %}
+    <div class="row">
+        <h3 class="blue-text center">Detalhe</h3>
+        <hr>
+        <ul class="collection">
+            {% for i in cotacoes %}
+                <li class="collection-item">{{ i.data }} - R$ {{ i.valor }}</li>
+            {% endfor %}
+        </ul>
+
+    </div>
+    <div class="row">
+        <a class="btn" href="{% url 'list_acoes' %}">Voltar</a>
+    </div>
+{% endblock %}

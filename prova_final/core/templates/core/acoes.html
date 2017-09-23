@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+
+{% block conteudo %}
+    <h3 class="blue-text center">Listagem de Ações</h3>
+
+    <div class="row">
+        <hr>
+        <ul class="collection">
+            {% for acao in acoes %}
+                <li class="collection-item">
+                    <a href="{% url 'detail_cotacao' pk=acao.pk %}">{{ acao.nome }} - {{ acao.sigla }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+{% endblock %}
